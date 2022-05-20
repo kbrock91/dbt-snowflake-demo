@@ -5,7 +5,7 @@
     tags="hourly"
 ) }}
 
-/* This is a dbt model  which means that it fits 2 requirements:
+/* This is a dbt model  which means it fits 2 requirements:
 - Is a select statement
 - Defined in a .sql file under the models directory
 
