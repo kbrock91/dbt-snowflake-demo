@@ -56,7 +56,7 @@ models:
           query_tag: dbt_staging
           # This applies a query tag named `dbt_staging` to any related queries in Snowflake's Query_History
           # learn more about query tags: https://docs.getdbt.com/reference/resource-configs/snowflake-configs#query-tags
-          snowflake_warehouse: compute_wh
+          snowflake_warehouse: transforming
           # This specifies which Snowflake warehouse should be used to execute models in staging by overriding the default warehouse defined in the connection.
           # learn more about configuring warehouses: https://docs.getdbt.com/reference/resource-configs/snowflake-configs#configuring-virtual-warehouses
           tags: "daily"
