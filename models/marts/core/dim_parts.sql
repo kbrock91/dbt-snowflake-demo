@@ -11,14 +11,14 @@ with part as (
 
 final as (
     select
-        part_key,
-        manufacturer,
-        name,
-        brand,
-        size,
-        container,
-        retail_price,
-        upper(type) as type
+        part_key
+        ,manufacturer
+        ,name
+        ,brand
+        ,size
+        ,container
+        ,retail_price
+        ,type
     from
         part
 )
