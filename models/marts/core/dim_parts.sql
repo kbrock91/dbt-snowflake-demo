@@ -17,7 +17,8 @@ final as (
         brand,
         size,
         container,
-        retail_price
+        retail_price,
+        upper(type) as type
     from
         part
 )
