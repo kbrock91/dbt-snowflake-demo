@@ -10,7 +10,7 @@ with part as (
 ),
 
 final as (
-         select 
+    select
         part_key,
         manufacturer,
         name,
