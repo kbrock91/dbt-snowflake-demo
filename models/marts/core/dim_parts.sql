@@ -10,15 +10,15 @@ with part as (
 ),
 
 final as (
-    select 
+    select
         part_key,
         manufacturer,
         name,
         brand,
-        type,
         size,
         container,
-        retail_price
+        retail_price,
+        upper(type) as type
     from
         part
 )
