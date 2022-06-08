@@ -15,7 +15,7 @@ final as (
         ,manufacturer
         ,name
         ,brand
-        ,size
+        ,size*2 double_size
         ,container
         ,retail_price
         ,upper(type)
