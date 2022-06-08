@@ -15,10 +15,10 @@ final as (
         manufacturer,
         name,
         brand,
-             upper(type) as type,
         size,
         container,
-        retail_price
+        retail_price,
+        upper(type) as type
     from
         part
 )
