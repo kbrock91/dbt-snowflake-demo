@@ -4,8 +4,8 @@
             )
 }}
 
-select 
-    *, 
+select
+    *,
     current_timestamp as _loaded_at
-from 
+from
     {{ ref('my_first_dbt_model') }}
