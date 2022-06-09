@@ -15,10 +15,10 @@ final as (
         manufacturer,
         name,
         brand,
-        size * 2 AS double_size,
+        size,
         container,
         retail_price,
-        upper(type)
+        type
     from
         part
 )
