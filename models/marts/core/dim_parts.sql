@@ -18,7 +18,8 @@ final as (
         size,
         container,
         retail_price,
-        type
+        type,
+        comment
     from
         part
 )

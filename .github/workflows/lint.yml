@@ -24,5 +24,7 @@ jobs:
           echo '${{ steps.lint-sql.outputs.sqlfluff-results }}' | jq -r '.'
           echo '${{ steps.lint-sql.outputs.sqlfluff-results-rdjson }}' | jq -r '.'
           echo '${{ steps.lint-sql.outputs.sqlfluff-exit-code }}' 
-          echo 'if [[ ! $variable ]]'
-          if [[ ! $variable ]] echo 'no results'
+          echo '[[ ! ${{ steps.lint-sql.outputs.sqlfluff-results }} ]]'
+          if [[ ! ${{ steps.lint-sql.outputs.sqlfluff-results }} ]];then
+              echo "result is  empty "
+          fi
