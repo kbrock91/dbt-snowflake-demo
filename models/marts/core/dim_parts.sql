@@ -15,7 +15,7 @@ final as (
         manufacturer,
         name,
         brand,
-        size*4,
+        size,
         container,
         retail_price,
         upper(type),
