@@ -23,4 +23,4 @@ jobs:
         run: |
           echo '${{ steps.lint-sql.outputs.sqlfluff-results }}' | jq -r '.'
           echo '${{ steps.lint-sql.outputs.sqlfluff-results-rdjson }}' | jq -r '.'
-          if [[  ${steps.lint-sql.outputs.sqlfluff-results} == '[]' ]]; then echo 'check results of sqlfluff'; exit 1; fi
+          if [[  ${steps.lint-sql.outputs.sqlfluff-results} == '[]' ]]; then (echo 'check results of sqlfluff'; exit 1); fi
