@@ -14,7 +14,7 @@ jobs:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
           sqlfluff_version: '0.13.1'
-          sqlfluff_command: 'lint' # Or "lint"
+          sqlfluff_command: 'lint' # Or "fix"
           config: '${{ github.workspace }}/.sqlfluff'
           paths: '${{ github.workspace }}/models'
           dialect: 'snowflake'
@@ -23,3 +23,4 @@ jobs:
         run: |
           echo '${{ steps.lint-sql.outputs.sqlfluff-results }}' | jq -r '.'
           echo '${{ steps.lint-sql.outputs.sqlfluff-results-rdjson }}' | jq -r '.'
+          echo '${{ steps.lint-sql.outputs.sqlfluff-exit-code }}' 
