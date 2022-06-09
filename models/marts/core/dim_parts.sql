@@ -18,7 +18,7 @@ final as (
         size * 2 AS double_size,
         container,
         retail_price,
-        upper(type)
+        upper(type) 
     from
         part
 )
