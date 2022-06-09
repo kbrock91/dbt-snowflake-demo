@@ -24,3 +24,4 @@ jobs:
           echo '${{ steps.lint-sql.outputs.sqlfluff-results }}' | jq -r '.'
           echo '${{ steps.lint-sql.outputs.sqlfluff-results-rdjson }}' | jq -r '.'
           echo '${{ steps.lint-sql.outputs.sqlfluff-exit-code }}' 
+          echo if [[ ! $variable ]]
