@@ -18,7 +18,7 @@ final as (
         size,
         container,
         retail_price,
-        type,
+        upper(type),
         comment
     from
         part
