@@ -18,7 +18,8 @@ final as (
         size * 4,
         container,
         retail_price,
-        upper(type) 
+        upper(type), 
+    retail_price / 100
     from
         part
 )
