@@ -7,5 +7,7 @@ packages:
 # To learn more, check out the docs: https://hub.getdbt.com/dbt-labs/dbt_utils/latest/
   - package: dbt-labs/dbt_utils
     version: 0.8.5
-  - package: dbt-labs/codegen
-    version: 0.6.0
+  - git: "https://github.com/dbt-labs/dbt-codegen.git"
+    revision: feature/generate_source_descs_iss64
+  - git: "https://github.com/dbt-labs/dbt-project-evaluator.git"
+    revision: main

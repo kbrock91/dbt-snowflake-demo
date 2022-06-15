@@ -171,3 +171,42 @@ models:
         description: '{{ doc("item_tax_amount") }}'
       - name: net_item_sales_amount
         description: '{{ doc("net_item_sales_amount") }}'
+  
+  - name: incremental_dim_orders
+    description: "incremental dim orders"
+    columns:
+      - name: order_key
+        description: ""
+
+      - name: order_date
+        description: ""
+
+      - name: customer_key
+        description: ""
+
+      - name: status_code
+        description: ""
+
+      - name: priority_code
+        description: ""
+
+      - name: clerk_name
+        description: ""
+
+      - name: ship_priority
+        description: ""
+
+      - name: order_count
+        description: ""
+
+      - name: gross_item_sales_amount
+        description: ""
+
+      - name: item_discount_amount
+        description: ""
+
+      - name: item_tax_amount
+        description: ""
+
+      - name: net_item_sales_amount
+        description: ""
