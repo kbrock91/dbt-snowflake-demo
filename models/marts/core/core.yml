@@ -9,6 +9,9 @@ version: 2
 models:
   - name: dim_customers
     description: Customer dimensions table
+    tests:
+    - dbt_expectations.expect_table_columns_to_contain_set:
+        column_list: ["CUSTOMER_KEY", "ID"]
     columns:
       - name: customer_key
         description: Primary key on the customers table
