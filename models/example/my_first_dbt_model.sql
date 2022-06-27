@@ -15,8 +15,8 @@ with source_data as
     union 
 
     select
-    3 as id,
-    3 / 2 as math
+        3 as id,
+        3 / 2 as math
 
     union 
 
