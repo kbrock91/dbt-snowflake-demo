@@ -27,6 +27,9 @@ models:
     columns:
       - name: id
         description: "id of my incremental dbt model"
+        tests:
+          - unique
+          - not_null
 
       - name: math
         description: "calculated column"
