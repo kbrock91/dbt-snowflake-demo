@@ -17,7 +17,7 @@ with data as
         where id >= (select max(id) from {{ this }})
 
 
-{% endif %}
+    {% endif %}
 
 )
 
