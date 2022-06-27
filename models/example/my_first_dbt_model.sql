@@ -8,8 +8,8 @@ with source_data as
     union 
 
     select
-    2 as id,
-    2 / 2 as math
+        2 as id,
+        2 / 2 as math
 
 
     union 
