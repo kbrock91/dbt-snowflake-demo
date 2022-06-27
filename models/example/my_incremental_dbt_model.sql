@@ -9,8 +9,8 @@ with data as
 
 ( 
 
-select * 
-from {{ ref('my_first_dbt_model') }}
+    select * 
+    from {{ ref('my_first_dbt_model') }}
 
     {% if is_incremental() %}
 
