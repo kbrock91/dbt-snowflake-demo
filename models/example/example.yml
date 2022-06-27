@@ -21,3 +21,12 @@ models:
 
       - name: _loaded_at
         description: "date the row was loaded into table"
+
+  - name: my_incremental_dbt_model
+    description: "My incremental dbt model"
+    columns:
+      - name: id
+        description: "id of my incremental dbt model"
+
+      - name: math
+        description: "calculated column"
