@@ -14,7 +14,7 @@ from {{ ref('my_first_dbt_model') }}
 
     {% if is_incremental() %}
 
-  where id >= (select max(id) from {{ this }})
+        where id >= (select max(id) from {{ this }})
 
 
 {% endif %}
