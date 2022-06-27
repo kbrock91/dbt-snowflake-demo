@@ -21,8 +21,8 @@ with source_data as
     union 
 
     select
-    4 as id,
-    4 / 2 as math
+        4 as id,
+        4 / 2 as math
 )
 
 select * from source_data 
