@@ -12,7 +12,7 @@ from
 
 {% if is_incremental() %}
 
-    where QUERY_ID >= (select max(QUERY_ID) from {{ this }})
+    where end_time > (select max(end_time) from {{ this }})
 
 
 {% endif %}
