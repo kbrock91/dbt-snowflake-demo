@@ -15,6 +15,9 @@ models:
     columns:
       - name: id
         description: "id of my second dbt model"
+        tests: 
+          - unique
+          - not_null
 
       - name: math
         description: "calculated column"
