@@ -1,3 +1,10 @@
+{{
+    config(
+        query_tag = "{{this}}"
+    )
+
+}}
+
 with source_data as 
 
 (
