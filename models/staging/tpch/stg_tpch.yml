@@ -8,7 +8,7 @@ version: 2
 
 models:
   - name: stg_tpch_customers
-    description: staging layer for customers data
+    description: staging layer for customers data 
     columns:
       - name: customer_key
         description: primary key of the customer table
