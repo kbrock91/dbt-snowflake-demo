@@ -1,5 +1,11 @@
 /* Create a pivot table with hard-coded columns based on a query of the ship modes that are in the system */
 
+{{
+    config(
+        tag='finance'
+    )
+}}
+
 with merged as (
     select
         date_part('year', order_date) as order_year,

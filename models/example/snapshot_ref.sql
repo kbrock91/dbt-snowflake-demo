@@ -1,0 +1,1 @@
+select * from {{ ref('snapshot_dim_customers') }}

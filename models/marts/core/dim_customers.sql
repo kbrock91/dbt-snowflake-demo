@@ -39,7 +39,8 @@ final as (
         region.name as region,
         customer.phone_number,
         customer.account_balance,
-        customer.market_segment
+        customer.market_segment, 
+        current_timestamp() as updated_date
         -- new column
     from
         customer
