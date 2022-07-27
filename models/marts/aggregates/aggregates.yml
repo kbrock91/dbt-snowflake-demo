@@ -17,3 +17,11 @@ models:
     columns:
       - name: order_year
         description: year of the order
+
+  - name: monthly_gross_revenue
+    description: gross revenue per month
+    columns:
+      - name: order_month
+        description: month of the order
+      - name: gross_revenue
+        description: sum of gross_item_sales_amount for all order items
