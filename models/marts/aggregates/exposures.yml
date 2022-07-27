@@ -8,24 +8,24 @@
 version: 2
 
 exposures:
-  - name: yearly_part_rollup
+  - name: monthly_gross_revenue
     description: | 
-      This is to represent a sample dashaboard for this demo project.
+      Snowflake dashboard illustrating monthly gross revenue over time
     
     # type could be {dashboard, notebook, analysis, ml, application}
     type: dashboard 
     
     # this is just a link to the thing itself for click through from documentation
-    url: https://example.com
+    url: https://app.snowflake.com/us-west-2/zna84829/monthly-gross-revenue-dCbc21ha8
     
     # convenience feature - relative scale of {high, medium, low}
     maturity: high
     
     # documentation purposes for point of contact if stuff breaks
     owner:
-      name: DBT User Maia
-      email: dbtusermaia@getdbt.com
+      name: Katherine Brock
+      email: katherine.brock@dbtlabs.com
     
     # IMPORTANT: determines the lineage relationship of the exposure construct to the rest of your DAG
     depends_on:
-      - ref('agg_ship_modes_dynamic_pivot')
+      - ref('monthly_gross_revenue')
