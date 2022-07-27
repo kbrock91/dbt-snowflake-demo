@@ -1,8 +1,5 @@
 name: sqlfluff with reviewdog
 on:
-  push:
-    branches:
-      - main
   pull_request:
 jobs:
   test-check:
