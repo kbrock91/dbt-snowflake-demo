@@ -25,3 +25,6 @@ models:
         description: month of the order
       - name: gross_revenue
         description: sum of gross_item_sales_amount for all order items
+        tests: 
+          - greater_than:
+              min_value: 0
