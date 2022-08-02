@@ -6,6 +6,7 @@
     
         {%- for node in graph.nodes.values() -%}
             {%- if node.unique_id in selected_resources and node.resource_type == 'model' and node.config.materialized == 'incremental' -%}
+                {{ log('node is selected: ' ~ node.name) }}
                 {%- set from_relation = (adapter.get_relation(database=from_db, schema=from_schema, identifier=node.name)) -%} 
                 {%- if from_relation.is_table -%}
 
