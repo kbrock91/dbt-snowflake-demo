@@ -1,12 +1,16 @@
 {% macro clone_modified_incrementals() %}
 {{ log('target name is ' ~ target.name) }}
+
+
 {%- if execute -%}
+
+{{ log('selected resources are ' ~ selected_resources ) }}
 
     {%- if target.name == 'ci' -%}
         {{ log('within if loop, target name is ' ~ target.name) }}
 
         {%- for node in graph.nodes.values() -%}
-            {{ log(selected_resources ) }}
+            
 
             {%- if node.unique_id in selected_resources and node.resource_type == 'model' and node.config.materialized == 'incremental' -%}
                 {{ log('node name is ' ~ node.name) }}
