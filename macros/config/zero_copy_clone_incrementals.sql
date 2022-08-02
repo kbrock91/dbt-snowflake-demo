@@ -10,7 +10,7 @@
                 {% set prod_schema_query %}
                 select
                     table_schema
-                from {{target.database}}.information_schema.tables
+                from {{ target.database }}.information_schema.tables
                 where lower(table_schema) like lower('{{target.schema}}%')
                 and table_name = '{{ node.name }}'; 
                 {% endset %}
@@ -27,12 +27,12 @@
 
                     {% set prod_schema = prod_schema_list[0] %}
 
-                    {%- set from_relation = (adapter.get_relation(database=prod_db, schema=prod_schema, identifier=node.name)) -%} 
+                    {%- set from_relation = (adapter.get_relation(database= target.database , schema=prod_schema, identifier=node.name)) -%} 
                     {%- if from_relation.is_table -%}
 
-                    create or replace transient table {{ target.database }}.{{ generate_schema_name(custom_schema_name = node.config.schema, node = node.name) }}.{{ node.name }} clone {{ prod_db }}.{{ prod_schema }}.{{ node.name }};
+                    create or replace transient table {{ target.database }}.{{ generate_schema_name(custom_schema_name = node.config.schema, node = node.name) }}.{{ node.name }} clone { target.database }}.{{ prod_schema }}.{{ node.name }};
 
-                    {% do log("Cloned incremental model " ~ prod_db ~ "." ~ prod_schema ~ "." ~ node.name ~ " into target schema.", info=true) %}
+                    {% do log("Cloned incremental model " ~  target.database  ~ "." ~ prod_schema ~ "." ~ node.name ~ " into target schema.", info=true) %}
                 
                     {%- endif -%}
 
@@ -51,7 +51,7 @@
             
         {%- endfor -%}
 
-        select 2; {# hooks will error if they dont have valid SQL in them, this handles that! #}
+        
     
     {%- else -%}
 
