@@ -17,15 +17,14 @@
                 {%- endif -%}
                 
             {%- endif -%}
-            {%- else -%}
-            select 1; {# hooks will error if they dont have valid SQL in them, this handles that! #}
+            
         {%- endfor -%}
 
-        select 2; {# hooks will error if they dont have valid SQL in them, this handles that! #}
+        select 1; {# hooks will error if they dont have valid SQL in them, this handles that! #}
     
     {%- else -%}
 
-    select 3; {# hooks will error if they dont have valid SQL in them, this handles that! #}
+    select 2; {# new comment here!! hooks will error if they dont have valid SQL in them, this handles that! #}
 
     {%- endif -%}
 
