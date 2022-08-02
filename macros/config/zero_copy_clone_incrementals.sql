@@ -3,7 +3,8 @@
 {%- if execute -%}
 
     {%- if target.name == 'ci' -%}
-    
+        {{ log('target name is ' ~ target.name) }}
+
         {%- for node in graph.nodes.values() -%}
             {%- if node.unique_id in selected_resources and node.resource_type == 'model' and node.config.materialized == 'incremental' -%}
                 {{ log('node name is ' ~ node.name) }}
