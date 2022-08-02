@@ -2,7 +2,7 @@
 
 {%- if execute -%}
 
-    {%- if target.name in 'ci' -%}
+    {%- if target.name == 'ci' -%}
     
         {%- for node in graph.nodes.values() -%}
             {%- if node.unique_id in selected_resources and node.resource_type == 'model' and node.config.materialized == 'incremental' -%}
