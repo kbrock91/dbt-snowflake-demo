@@ -1,11 +1,12 @@
 {% macro clone_modified_incrementals() %}
-
+{{ log('target name is ' ~ target.name) }}
 {%- if execute -%}
 
     {%- if target.name == 'ci' -%}
     
         {%- for node in graph.nodes.values() -%}
             {%- if node.unique_id in selected_resources and node.resource_type == 'model' and node.config.materialized == 'incremental' -%}
+                {{ log('node name is ' ~ node.name) }}
 
                 {% set prod_schema_query %}
                 select
@@ -22,6 +23,9 @@
                 {% else %}
                 {% set prod_schema_list = [] %}
                 {% endif %}
+                
+                {{ log('prod_schema_list is ' ~ prod_schema_list) }}
+
 
                 {% if prod_schema_list|length == 1 %}
 
@@ -55,7 +59,9 @@
     
     {%- else -%}
 
-    select 3; {# hooks will error if they dont have valid SQL in them, this handles that! #}
+    select 2; {# hooks will error if they dont have valid SQL in them, this handles that! #}
+    {{ log('target.name not == ''ci''') }}
+
 
     {%- endif -%}
 
