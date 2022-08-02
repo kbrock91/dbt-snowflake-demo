@@ -1,4 +1,4 @@
-{% macro clone_modified_incrementals(prod_db) %}
+{% macro clone_modified_incrementals() %}
 
 {%- if execute -%}
 
@@ -10,8 +10,9 @@
                 {% set prod_schema_query %}
                 select
                     table_schema
-                from {{ prod_db }}.information_schema.tables
-                where table_name = '{{ node.name }}'; 
+                from {{target.database}}.information_schema.tables
+                where lower(table_schema) like lower('{{target.schema}}%')
+                and table_name = '{{ node.name }}'; 
                 {% endset %}
 
                 {% set results = run_query(prod_schema_query) %}
