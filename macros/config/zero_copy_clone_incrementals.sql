@@ -6,7 +6,8 @@
         {{ log('within if loop, target name is ' ~ target.name) }}
 
         {%- for node in graph.nodes.values() -%}
-            {{ log('resource type is ' ~ node.resource_type ~ 'and materialized is ' ~ node.config.materialized ) }}
+            {{ log(selected_resources ) }}
+
             {%- if node.unique_id in selected_resources and node.resource_type == 'model' and node.config.materialized == 'incremental' -%}
                 {{ log('node name is ' ~ node.name) }}
 
