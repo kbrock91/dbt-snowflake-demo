@@ -4,7 +4,7 @@
 
 {%- if execute -%}
 
-    {{ log('selected resources are ' ~ selected_resources ) }}
+    {% do log('selected resources are ' ~ selected_resources, info=true) %}
 
     {%- if target.name == 'ci' -%}
         {{ log('within if loop, target name is ' ~ target.name) }}
