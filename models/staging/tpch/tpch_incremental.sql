@@ -8,7 +8,6 @@
 
 with data as 
 
-
 ( 
 
     select * 
