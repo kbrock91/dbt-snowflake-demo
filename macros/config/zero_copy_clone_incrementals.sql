@@ -40,7 +40,7 @@
                     {%- set from_relation = (adapter.get_relation(database= target.database , schema=prod_schema, identifier=node.name)) -%} 
                     {%- if from_relation.is_table -%}
 
-                    create or replace transient table {{ target.database }}.{{ generate_schema_name(custom_schema_name = node.config.schema, node = node.name) }}.{{ node.name }} clone { target.database }}.{{ prod_schema }}.{{ node.name }};
+                    create or replace transient table {{ target.database }}.{{ generate_schema_name(custom_schema_name = node.config.schema, node = node.name) }}.{{ node.name }} clone {{ target.database }}.{{ prod_schema }}.{{ node.name }};
 
                     {% do log("Cloned incremental model " ~  target.database  ~ "." ~ prod_schema ~ "." ~ node.name ~ " into target schema.", info=true) %}
                 
