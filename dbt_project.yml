@@ -38,6 +38,11 @@ seeds:
 # This declares that column names in the seed file will not be quoted when the table is created.
   +quote_columns: false
 
+#configuring vars
+vars:
+  dbt_artifacts:
+    dbt_artifacts_schema: dbt_kbrock
+
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
@@ -48,6 +53,10 @@ seeds:
 models:
   my_snowflake_dbt_project:
     # When you rename the project up top, remember to rename it here too. 
+      dbt_artifacts:
+        +schema: dbt_kbrock
+        staging:
+          +schema: dbt_kbrock
       staging:
           # Applies to all files under models/staging 
           +materialized: view
