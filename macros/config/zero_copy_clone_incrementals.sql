@@ -1,4 +1,4 @@
-{% macro old_clone_modified_incrementals() %}
+{% macro clone_modified_incrementals() %}
 {{ log('target name is ' ~ target.name) }}
 
 

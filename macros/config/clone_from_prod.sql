@@ -1,4 +1,4 @@
-{% macro clone_modified_incrementals(from_db, from_schema) %}
+{% macro old_clone_modified_incrementals(from_db, from_schema) %}
 
 {%- if execute -%}
 
