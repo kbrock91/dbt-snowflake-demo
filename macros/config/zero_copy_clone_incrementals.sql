@@ -19,7 +19,7 @@
                     table_schema
                 from {{ target.database }}.information_schema.tables
                 where lower(table_schema) = lower('{{prod_schema}}')
-                and table_name = '{{ node.name }}'; 
+                and lower(table_name) = lower('{{ node.name }}'); 
                 {% endset %}
 
                 {% set results = run_query(prod_schema_query) %}
