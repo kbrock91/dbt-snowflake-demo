@@ -37,9 +37,6 @@ seeds:
   +quote_columns: false
 
 #configuring vars
-vars:
-  dbt_artifacts:
-    dbt_artifacts_schema: dbt_kbrock
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
@@ -51,10 +48,6 @@ vars:
 models:
   my_snowflake_dbt_project:
     # When you rename the project up top, remember to rename it here too. 
-      dbt_artifacts:
-        +schema: dbt_kbrock
-        staging:
-          +schema: dbt_kbrock
       staging:
           # Applies to all files under models/staging 
           +materialized: view
