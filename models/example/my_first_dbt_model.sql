@@ -25,4 +25,4 @@ with source_data as
         4 / 2 as value
 )
 
-select * from source_data 
+select * from source_data
