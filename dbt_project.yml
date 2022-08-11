@@ -48,7 +48,6 @@ seeds:
 models:
   my_snowflake_dbt_project:
     # When you rename the project up top, remember to rename it here too. 
-      +pre-hook: "{{check_for_hard_coded_tables(this)}}"
       staging:
           # Applies to all files under models/staging 
           +materialized: view
