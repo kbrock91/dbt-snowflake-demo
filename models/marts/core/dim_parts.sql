@@ -5,7 +5,7 @@
 }}
 with part as (
 
-    select * from {{ref('stg_tpch_parts')}}
+    select * from {{ ref('stg_tpch_parts') }}
 
 ),
 
@@ -15,7 +15,7 @@ final as (
         manufacturer,
         name,
         brand,
-        size * 2 AS double_size,
+        size,
         container,
         retail_price,
         upper(type)
