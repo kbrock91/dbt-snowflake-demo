@@ -2,7 +2,7 @@ with source_data as
 
 (
     select
-        2 as id,
+        1 as id,
         1 / 2 as value
 
     union 
