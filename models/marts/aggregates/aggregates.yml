@@ -23,6 +23,8 @@ models:
     columns:
       - name: order_month
         description: month of the order
+        tests:
+          - unique
       - name: gross_revenue
         description: sum of gross_item_sales_amount for all order items
         tests: 
