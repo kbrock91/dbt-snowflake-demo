@@ -1,0 +1,11 @@
+version: 2
+
+
+sources:
+  - name: google_ads
+    description: google ads sample data
+    database: ANALYTICS
+    schema: dbt_kbrock
+    tables:
+      - name: final_url_performance
+        description: final url performance table

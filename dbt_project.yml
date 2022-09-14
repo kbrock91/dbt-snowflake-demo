@@ -49,6 +49,7 @@ models:
   my_snowflake_dbt_project:
     # When you rename the project up top, remember to rename it here too. 
       staging:
+          +pre-hook: "{{check_file_name(this, ruleset='stage')}}"
           # Applies to all files under models/staging 
           +materialized: view
           # This defaults every model in the staging directory to be materialized as a view in Snowflake. To learn more about materializations: https://docs.getdbt.com/docs/building-a-dbt-project/building-models/materializations
