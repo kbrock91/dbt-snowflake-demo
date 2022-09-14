@@ -4,4 +4,4 @@
     )
 }}
 
-select * from analytics.dbt_kbrock.my_first_dbt_model
+select * from {{ ref('my_first_dbt_model') }}
