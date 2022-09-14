@@ -16,7 +16,7 @@ exposures:
     type: dashboard 
     
     # this is just a link to the thing itself for click through from documentation
-    url: https://app.snowflake.com/us-west-2/zna84829/monthly-gross-revenue-dCbc21ha8
+    url: https://fishtown.looker.com/dashboards/516
     
     # convenience feature - relative scale of {high, medium, low}
     maturity: high
