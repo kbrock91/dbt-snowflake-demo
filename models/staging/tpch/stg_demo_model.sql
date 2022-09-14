@@ -4,4 +4,4 @@
     )
 }}
 
-select 1 as my_new_column
+select * from analytics.dbt_kbrock.my_first_dbt_model
