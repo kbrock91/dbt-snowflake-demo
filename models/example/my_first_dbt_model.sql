@@ -6,6 +6,7 @@ with source_data as
         1 / 2 as value
 
     union 
+    
 
     select
         2 as id,
