@@ -11,7 +11,6 @@ with source_data as
         2 as id,
         2 / 2 as value
 
-
     union 
 
     select
