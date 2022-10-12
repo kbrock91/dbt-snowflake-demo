@@ -30,6 +30,7 @@ region as (
 ),
 final as (
     select 
+        
         customer.customer_key,
         customer.name,
         customer.address,
