@@ -138,11 +138,6 @@ models:
   
   - name: fct_orders
     description: orders fact table
-    tests:
-      - row_count_group_by_greater_than: 
-          group_by_columns: order_date
-          threshold: 3
-          severity: warn
     columns:
       - name: order_key
         description: primary key of the model
