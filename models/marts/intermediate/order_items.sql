@@ -19,10 +19,7 @@ select
     line_item.supplier_key,
     orders.order_date,
     orders.status_code as order_status_code,
-    
-    
     line_item.return_flag,
-    
     line_item.line_number,
     line_item.status_code as order_item_status_code,
     line_item.ship_date,
@@ -52,7 +49,9 @@ select
 
 from
     orders
-inner join line_item
+
+    inner join line_item
         on orders.order_key = line_item.order_key
+
 order by
     orders.order_date
