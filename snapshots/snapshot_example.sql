@@ -1,4 +1,4 @@
-{% snapshot snapshot_example_new %}
+{% snapshot my_dbt_snapshot %}
     {{
         config(
             unique_key='new_id',
