@@ -38,6 +38,10 @@ sources:
                   field: c_custkey
           - name: o_orderstatus
             description: status code of the order
+            tests: 
+            # this applies the tests unique and not_null to the o_orderkey colum 
+            - unique
+            - not_null           
           - name: o_totalprice
             description: raw price
           - name: o_orderdate
