@@ -34,7 +34,7 @@ renamed as (
         c_mktsegment as market_segment,
         c_comment as comment, 
         'hello' as world, 
-        'hello_3' as world_3
+        'hello_4' as world_4
 
     from source
 
