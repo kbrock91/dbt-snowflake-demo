@@ -9,7 +9,7 @@ with source_data as
 
     select
         2 as id,
-        2 / 5  as value
+        2 / 6  as value
 
 )
 
