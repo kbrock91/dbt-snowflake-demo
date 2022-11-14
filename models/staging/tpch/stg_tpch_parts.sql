@@ -16,7 +16,7 @@ renamed as (
         p_size as size,
         p_container as container,
         p_retailprice as retail_price,
-        p_comment as comment2
+        p_comment as comment3
 
     from source
 
