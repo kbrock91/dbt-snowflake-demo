@@ -33,7 +33,8 @@ renamed as (
         c_acctbal as account_balance,
         c_mktsegment as market_segment,
         c_comment as comment, 
-        'hello' as world
+        'hello' as world, 
+        'hello_2' as world_2
 
     from source
 
