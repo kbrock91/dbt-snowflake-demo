@@ -17,7 +17,7 @@ renamed as (
         o_clerk as clerk_name,
         o_shippriority as ship_priority,
         o_comment as comment,
-        'hello' as world2
+        'hello' as world3
 
     from source
 
