@@ -6,6 +6,13 @@ models:
     columns:
       - name: id
         description: "id of my first dbt model"
+        tests: 
+          - unique
+          - not_null:
+              config:
+                severity: error
+                error_if: ">1"
+                warn_if: ">1"
 
       - name: math
         description: "calculated column"
