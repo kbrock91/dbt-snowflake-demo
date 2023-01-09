@@ -1,5 +1,48 @@
 version: 2
 
+sources:
+  - name: example
+    database: analytics
+    schema: dbt_kbrock
+    tables:
+      - name: my_first_dbt_model
+        description: my first dbt model
+        columns:
+          - name: id
+            description: Primary key
+            tests: 
+              # this applies the tests unique and not_null to the id colum 
+              - unique:
+                  config:
+                    severity: warn
+              - not_null:
+                  config:
+                    severity: warn
+          - name: text
+            tests:
+              - accepted_values:
+                  values: ['hello']
+                  config:
+                    severity: warn
+      - name: dummy_model
+        description: my first dbt model
+        columns:
+          - name: id
+            description: Primary key
+            tests: 
+              # this applies the tests unique and not_null to the id colum 
+              - unique:
+                  config:
+                    severity: warn
+              - not_null:
+                  config:
+                    severity: warn
+          - name: text
+            tests:
+              - accepted_values:
+                  values: ['hello']
+                  config:
+                    severity: warn
 models:
   - name: my_first_dbt_model
     description: "My first dbt model"

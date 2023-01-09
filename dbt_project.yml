@@ -71,3 +71,8 @@ models:
           # This defaults every model in the marts/core directory to be materialized as a table in Snowflake
           query_tag: dbt_marts   
           # This applies a query tag named `dbt_marts` to any related queries in Snowflake's Query_History       
+
+tests:
+  +store_failures: true  # all tests
+  +post-hook: 
+    - "{{ store_test_results(results) }}"
