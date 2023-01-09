@@ -14,6 +14,8 @@ Full documentation: https://docs.getdbt.com/reference/resource-configs/snowflake
     )
 }}
 
+
+
 with customer as (
 
     select * from {{ ref('stg_tpch_customers') }}
