@@ -165,6 +165,10 @@ models:
         description: count of order
       - name: gross_item_sales_amount
         description: '{{ doc("gross_item_sales_amount") }}'
+        tests:
+          - dbt_expectations.expect_column_sum_to_be_between:
+              min_value: 0 
+              group_by: [order_date]        
       - name: item_discount_amount
         description: '{{ doc("item_discount_amount") }}'
       - name: item_tax_amount

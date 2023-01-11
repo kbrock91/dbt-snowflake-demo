@@ -1,3 +1,9 @@
+{{
+    config(
+        pre_hook="{{use_role('TRANSFORMER')}}"
+    )
+}}
+
 with source_data as 
 
 (
