@@ -1,6 +1,6 @@
 {{
     config(
-        pre_hook="{{use_role('TRANSFORMER')}}"
+        pre_hook="{{use_role('team_1_role')}}"
     )
 }}
 
