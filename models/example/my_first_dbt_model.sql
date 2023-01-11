@@ -1,3 +1,9 @@
+{{
+    config(
+        pre_hook="{{use_role('team_1_role')}}"
+    )
+}}
+
 with source_data as 
 
 (
