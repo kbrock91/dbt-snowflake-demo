@@ -1,0 +1,17 @@
+version: 2
+
+metrics:
+  - name: revenue
+    label: Revenue metric from non-returned orders
+    model: ref('fct_order_items')
+    
+    expression: gross_item_sales_amount
+    calculation_method: sum
+    
+    timestamp: order_date
+    time_grains: [day, week, month]
+    
+    filters:
+      - field: return_flag
+        operator: '!='
+        value: "'R'"
