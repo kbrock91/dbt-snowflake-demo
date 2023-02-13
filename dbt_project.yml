@@ -48,6 +48,9 @@ seeds:
 models:
   my_snowflake_dbt_project:
     # When you rename the project up top, remember to rename it here too. 
+      example:
+          schema: kb_dbo
+
       staging:
           # Applies to all files under models/staging 
           +materialized: view
