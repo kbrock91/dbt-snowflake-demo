@@ -1,13 +1,13 @@
 {% snapshot my_dbt_snapshot %}
     {{
         config(
-            unique_key='id',
+            unique_key='new_id',
             strategy='check'    ,
             check_cols = ['value'],
-            target_schema = 'dbt_kbrock_snapshot',
+            target_schema = 'dbt_kbrock',
             invalidate_hard_deletes=True    )
     }}
 
-    select id, value from {{ ref('my_first_dbt_model') }}
+    select id as new_id, value from {{ ref('my_first_dbt_model') }}
     
  {% endsnapshot %}
