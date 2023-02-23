@@ -7,9 +7,13 @@
 
         {{ custom_schema_name | trim }}
 
+    {%- elif custom_schema_name is not none -%}
+    
+        {{nodepath[0]|replace("-","_")}}_{{ custom_schema_name | trim }}
+    
     {%- else -%}
 
-        {{nodepath[0]|replace("-","_")}}_{{ custom_schema_name | trim }}
+        {{ default_schema | trim }}
 
     {%- endif -%}
 
