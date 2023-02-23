@@ -6,7 +6,7 @@
 
         {{ custom_database_name | trim }}        
 
-    {%- else -%}
+    {%- else -%} --should probably update the order of this conditional so that it checks if target.name = default first
 
         {{ default_database }}
 
