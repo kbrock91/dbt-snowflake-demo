@@ -1,0 +1,24 @@
+version: 2
+
+metrics:
+  - name: orders_over_time
+    label: Orders Over Time
+    model: ref('fct_orders')
+    description: The sum of orders over time
+
+    calculation_method: sum
+    expression: order_count
+
+    timestamp: order_date
+    time_grains: [day, week, month, year]
+
+    dimensions:
+      - status_code
+      - ship_priority
+      - clerk_name
+      - priority_code
+
+    filters:
+      - field: status_code
+        operator: 'in'
+        value: "('O','F')"
