@@ -1,0 +1,1 @@
+select * from {{ source('edw', 'STG_SC_YFS_ORDER_RELEASE_STATUS') }}

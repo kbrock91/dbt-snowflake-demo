@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_STG_SC_YFS_ORDER_RELEASE_STATUS
+    description: Order Release Status staging model
+    
+  - name: stg_DW_ORD_TXN_DTL
+    description: Order transaction detail staging model
+
+  - name: stg_DW_ORD_PROCESS_TYPE_STATUS_V
+    description: Order process type status staging model
+    columns: 
+    - name: col_name
+      description: col_description
+      tests:
+        - unique
+            

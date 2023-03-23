@@ -1,0 +1,1 @@
+select * from {{ source('edw', 'DW_ORD_TXN_DTL') }}

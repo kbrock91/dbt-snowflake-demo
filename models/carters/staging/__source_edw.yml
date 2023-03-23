@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: edw
+    database: dev
+    schema: edw
+    tables:
+      - name: STG_SC_YFS_ORDER_RELEASE_STATUS
+      - name: DW_ORD_TXN_DTL
+      - name: DW_ORD_PROCESS_TYPE_STATUS_V
