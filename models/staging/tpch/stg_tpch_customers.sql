@@ -1,7 +1,7 @@
 /*  This is a model config block. With it, you can create model specific configurations and override the configurations set on the dbt_project.yml. 
 */
 {{ config(
-    materialized="table",
+    materialized="view",
     tags="hourly"
 ) }}
 
