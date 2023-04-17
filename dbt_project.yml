@@ -48,6 +48,7 @@ seeds:
 models:
   my_snowflake_dbt_project:
     # When you rename the project up top, remember to rename it here too. 
+      +pre-hook: "{{ validate_model_name() }}"
       staging:
           # Applies to all files under models/staging 
           +materialized: view
