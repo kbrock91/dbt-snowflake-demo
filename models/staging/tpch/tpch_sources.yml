@@ -15,7 +15,7 @@ sources:
     schema: tpch_sf001
     tables:
       - name: orders
-        description: main order tracking table
+        description: main order tracking table - force changes
         freshness: 
           # This section applies freshness tests on these column. Full docs: https://docs.getdbt.com/docs/dbt-cloud/using-dbt-cloud/cloud-snapshotting-source-freshness
           warn_after: {count: 6, period: hour}
