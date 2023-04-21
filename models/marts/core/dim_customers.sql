@@ -8,12 +8,10 @@ Full documentation: https://docs.getdbt.com/reference/resource-configs/snowflake
 
 {{
     config(
-        materialized = 'view',
+        materialized = 'table',
         transient=false
     )
 }}
-
-
 
 with customer as (
 
