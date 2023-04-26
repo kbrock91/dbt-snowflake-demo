@@ -27,6 +27,10 @@ clean-targets:         # directories to be removed by `dbt clean`
 # on-run-start and on-run-end are SQL statement(s) or macros that run at the end of 
 # dbt run/dbt/seed/dbt snapshot commands. 
 # Full documentation: https://docs.getdbt.com/reference/project-configs/on-run-start-on-run-end
+
+on-run-start: 
+  - "{{create_share('kbrock_share_dev', 'UTB91939') }}"
+
 on-run-end:
   - "{{ grant_all_on_schemas(schemas, 'public') }}"
 
@@ -71,3 +75,6 @@ models:
           # This defaults every model in the marts/core directory to be materialized as a table in Snowflake
           query_tag: dbt_marts   
           # This applies a query tag named `dbt_marts` to any related queries in Snowflake's Query_History       
+        sharing:
+          post-hook:
+            - "{{share_model(  this.schema, this.name,'kbrock_share_dev')}}"
