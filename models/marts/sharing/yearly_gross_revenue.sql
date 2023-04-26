@@ -1,8 +1,6 @@
 {{
     config(
-        materialized='table', 
-        pre_hook= "{{create_share('kbrock_share_dev', 'UTB91939') }}",
-        post_hook = "{{share_model(  'dbt_kbrock', 'yearly_gross_revenue','kbrock_share_dev')}}"
+        materialized='table'
     )
 }}
 
