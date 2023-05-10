@@ -8,14 +8,14 @@ Full documentation: https://docs.getdbt.com/reference/resource-configs/snowflake
 
 {{
     config(
-        materialized = 'table',
+        materialized = 'view',
         transient=false
     )
 }}
 
 with customer as (
 
-    select * from {{ ref('stg_tpch_customers') }}
+    select * from {{ ref('stg_tpch_customers') }} 
 
 ),
 nation as (
