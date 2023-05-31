@@ -4,6 +4,17 @@
 # We have also applied tests to every primary key listed in this file.
 # Full documentation: https://docs.getdbt.com/reference/declaring-properties
 
+models:
+  - name: model_name
+    description: description
+    columns:
+      - name: col_name
+        description: col_description
+        tests:
+          - unique
+          
+      
+
 version: 2
 
 models:
