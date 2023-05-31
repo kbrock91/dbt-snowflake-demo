@@ -35,7 +35,7 @@ final as (
         {# nation.nation_key as nation_key, #}
         nation.name as nation,
         {# region.region_key as region_key, #}
-        lower(region.name) as region,
+        region.name as region,
         customer.phone_number,
         customer.account_balance,
         customer.market_segment
