@@ -5,7 +5,6 @@ as idempotent (https://discourse.getdbt.com/t/understanding-idempotent-data-tran
 Full documentation: https://docs.getdbt.com/reference/resource-configs/snowflake-configs#transient-tables
 
 */
-
 {{
     config(
         materialized = 'table',
