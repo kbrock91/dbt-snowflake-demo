@@ -4,7 +4,7 @@
 # We have also applied tests to every primary key listed in this file.
 # Full documentation: https://docs.getdbt.com/reference/declaring-properties
 
-version: 2
+version: 2      
 
 models:
   - name: dim_customers
