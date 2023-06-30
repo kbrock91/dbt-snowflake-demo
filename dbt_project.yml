@@ -12,10 +12,10 @@ profile: 'snowflake_demo_project'
 # These configurations specify where dbt should look for different types of files.
 # The `source-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You don't need to change these for this project.
-source-paths: ["models"]
+model-paths: ["models"]
 analysis-paths: ["analysis"]
 test-paths: ["tests"]
-data-paths: ["data"]
+seed-paths: ["data"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
@@ -32,9 +32,9 @@ on-run-end:
 
 # Configuring seeds 
 # Full documentation: https://docs.getdbt.com/docs/building-a-dbt-project/seeds
-seeds:
+#seeds:
 # This declares that column names in the seed file will not be quoted when the table is created.
-  +quote_columns: false
+#  +quote_columns: false
 
 #configuring vars
 
