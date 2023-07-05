@@ -33,3 +33,8 @@ models:
 
       - name: math
         description: "calculated column"
+
+  - name: dbtc_projects
+    config:
+      materialized: table
+      api_token: "dbts_MRyOm6cSJ-Qux8VBg2tShg2w6mGL-1nyMi-91s5JzPxRA0ZJnc91GfIg=="
