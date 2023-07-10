@@ -27,8 +27,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 # on-run-start and on-run-end are SQL statement(s) or macros that run at the end of 
 # dbt run/dbt/seed/dbt snapshot commands. 
 # Full documentation: https://docs.getdbt.com/reference/project-configs/on-run-start-on-run-end
-on-run-end:
-  - "{{ grant_all_on_schemas(schemas, 'public') }}"
+#on-run-end:
+#  - "{{ grant_all_on_schemas(schemas, 'public') }}"
 
 # Configuring seeds 
 # Full documentation: https://docs.getdbt.com/docs/building-a-dbt-project/seeds
@@ -48,6 +48,8 @@ on-run-end:
 models:
   my_snowflake_dbt_project:
     # When you rename the project up top, remember to rename it here too. 
+    #  +post-hook:
+      #  - "{{ grant_ownership('KBROCK_SECONDARY_ROLE_ACCESS_TEST') }}"
       staging:
           # Applies to all files under models/staging 
           +materialized: view
