@@ -48,8 +48,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   my_snowflake_dbt_project:
     # When you rename the project up top, remember to rename it here too. 
-    #  +post-hook:
-      #  - "{{ grant_ownership('KBROCK_SECONDARY_ROLE_ACCESS_TEST') }}"
+      +post-hook:
+        - "{{ grant_ownership('KBROCK_SECONDARY_ROLE_ACCESS_TEST') }}"
       staging:
           # Applies to all files under models/staging 
           +materialized: view
