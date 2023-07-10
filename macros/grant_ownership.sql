@@ -18,6 +18,4 @@ Learn more about macros and jinja here: https://docs.getdbt.com/docs/building-a-
         
     grant ownership on {{object_type}} {{this}} to role {{role}} REVOKE CURRENT GRANTS;
 
-    {{ log("LOGGING - " ~ this.is_view, info=True) }}
-
 {% endmacro %}
