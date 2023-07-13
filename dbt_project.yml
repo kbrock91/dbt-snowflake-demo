@@ -38,6 +38,9 @@ on-run-end:
 
 #configuring vars
 
+vars:
+  # The `start_date` variable will be accessible in all resources
+  dWndDate: '2023-06-30'
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
