@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: snowflake_meta
+  - name: account_usage
     schema: account_usage
     database: snowflake
     tables:
