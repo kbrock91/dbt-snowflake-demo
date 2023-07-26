@@ -3,7 +3,6 @@ save on storage costs. Non-transient Snowflake objects store the history of the 
 as idempotent (https://discourse.getdbt.com/t/understanding-idempotent-data-transformations/518)
 
 Full documentation: https://docs.getdbt.com/reference/resource-configs/snowflake-configs#transient-tables
-
 */
 
 {{

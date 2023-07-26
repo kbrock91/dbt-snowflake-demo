@@ -7,4 +7,33 @@ sources:
     tables:
       - name: query_history
       - name: warehouse_metering_history
-      
+
+  - name: snowplow
+    database: analytics
+    schema: snowplow_external
+    loader: S3
+    loaded_at_field: collector_hour
+    
+    tables:
+      - name: event_snowpipe_kbrock_test3
+        description: "Table of Snowplow events, stored as JSON files, loaded in near-real time via Snowpipe"
+        loader: S3 + snowpipe    # this is just for your reference
+        external:
+          location: "@raw.snowplow.snowplow"
+          file_format: "{{ target.schema }}.my_json_file_format"
+          pattern: ".*[.]json"  # Optional object key pattern
+
+          # Instead of an external tables, create an empty table, backfill it, and pipe new data
+          snowpipe:
+            auto_ingest:    true  # requires either `aws_sns_topic` or `integration`
+            aws_sns_topic:  # Amazon S3
+            integration:    # Google Cloud or Azure
+            copy_options:   "on_error = continue, enforce_length = false" # e.g.
+
+          columns:
+            - name: ID
+              data_type: TEXT
+            - name: Number
+              data_type: NUMBER(38, 0)
+            - name: Name
+              data_type: TEXT
