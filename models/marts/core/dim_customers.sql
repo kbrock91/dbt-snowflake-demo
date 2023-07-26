@@ -8,7 +8,7 @@ Full documentation: https://docs.getdbt.com/reference/resource-configs/snowflake
 
 {{
     config(
-        materialized = 'table',
+        materialized = 'view',
         transient=false
     )
 }}
@@ -21,7 +21,7 @@ with customer as (
 nation as (
 
     select * from {{ ref('stg_tpch_nations') }}
-    
+
 ),
 region as (
 
