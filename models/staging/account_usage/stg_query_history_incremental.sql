@@ -8,7 +8,7 @@
 select 
     * 
 from 
-    {{ source('snowflake_meta', 'query_history') }}
+    {{ source('account_usage', 'query_history') }}
 
 {% if is_incremental() %}
 
