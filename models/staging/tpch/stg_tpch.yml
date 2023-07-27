@@ -9,6 +9,7 @@ version: 2
 models:
   - name: stg_tpch_customers
     description: staging layer for customers data
+    access: public
     columns:
       - name: customer_key
         description: primary key of the customer table
@@ -32,6 +33,7 @@ models:
 
   - name: stg_tpch_line_items
     description: staging layer for line items data
+    access: public
     columns:
       - name: order_item_key
         description: '{{ doc("order_item_key") }}'
@@ -72,6 +74,7 @@ models:
         description: '{{ doc("comment") }}'
 
   - name: stg_tpch_nations
+    access: public
     description: staging layer for nations data
     columns:
       - name: nation_key
@@ -88,6 +91,7 @@ models:
  
   - name: stg_tpch_orders
     description: staging layer for orders data
+    access: public
     columns:
       - name: order_key
         description: primary key of the model
@@ -113,6 +117,7 @@ models:
 
   - name: stg_tpch_part_suppliers
     description: staging layer for suppliers data
+    access: public
     columns:
       - name: part_supplier_key
         description: surrogate key for the model -- combo of ps_partkey + ps_suppkey
@@ -157,6 +162,7 @@ models:
 
   - name: stg_tpch_regions
     description: staging layer for regions data
+    access: public
     columns:
       - name: region_key
         description: primary key of the model
