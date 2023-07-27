@@ -46,7 +46,7 @@ on-run-end:
 # These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro. 
 models:
-  my_snowflake_dbt_project:
+  parent_snowflake_project:
     # When you rename the project up top, remember to rename it here too. 
       staging:
           # Applies to all files under models/staging 
