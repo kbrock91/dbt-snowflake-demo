@@ -37,6 +37,10 @@ on-run-end:
 #  +quote_columns: false
 
 #configuring vars
+vars:
+    'snowflake_utils:initial_run_warehouse': "transforming_xl_wh"
+    'snowflake_utils:full_refresh_run_warehouse': "transforming_xl_wh"
+    'snowflake_utils:incremental_run_warehouse': "transforming_m_wh"
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models

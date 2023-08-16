@@ -2,8 +2,11 @@
 */
 {{ config(
     materialized="table",
-    tags="hourly"
-) }}
+    tags="hourly",
+    snowflake_warehouse=snowflake_utils.warehouse_size()
+)
+}}
+
 
 /* This is a dbt model  which means it fits 2 requirements:
 - Is a select statement
