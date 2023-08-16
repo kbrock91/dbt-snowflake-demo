@@ -9,7 +9,7 @@ with data as
 
 ( 
 
-    select 1 as new, * 
+    select 2 as new, * 
     from {{ ref('my_first_dbt_model') }}
 
     {% if is_incremental() %}
