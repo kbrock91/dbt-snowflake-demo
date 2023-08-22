@@ -1,7 +1,7 @@
 /*  This is a model config block. With it, you can create model specific configurations and override the configurations set on the dbt_project.yml. 
 */
 {{ config(
-    materialized="table",
+    materialized="view",
     tags="hourly"
 ) }}
 
@@ -29,6 +29,7 @@ renamed as (
         c_name as name,
         c_address as address, 
         c_nationkey as nation_key,
+        c_phone as phone_number,
         c_acctbal as account_balance,
         c_mktsegment as market_segment,
         c_comment as comment
