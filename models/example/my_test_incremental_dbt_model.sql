@@ -15,13 +15,12 @@ with source_data as
 (
     select
         1 as id,        
-        to_number(10.0) as my_test_column
-
+        10.0::FLOAT as my_test_column
     union 
 
     select
         2 as id,
-        to_number(5.0) as my_test_column
+        5::FLOAT as my_test_column
 
 )
 
