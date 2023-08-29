@@ -10,7 +10,7 @@ with data as
 
 ( 
 
-    select * 
+    select to_number(my_test_column,38, 37) as my_test_column, id, value
     from {{ ref('my_first_dbt_model') }}
 
     {% if is_incremental() %}

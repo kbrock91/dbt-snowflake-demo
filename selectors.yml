@@ -1,0 +1,16 @@
+selectors:
+  - name: skip_views_but_test_views
+    description: >
+      A default selector that will exclude materializing views
+      without skipping tests on views.
+    default: false
+    definition:
+      union:
+        - union: 
+          - method: path
+            value: "*"
+          - exclude: 
+            - method: config.materialized
+              value: view
+        - method: resource_type
+          value: test

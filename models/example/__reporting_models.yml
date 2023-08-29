@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: reporting__pipeline_dash_projects
+    description: "Pipeline projects consisting of both projects from quickbase and Tririga"
+    config:
+      materialized: view
+      schema: reporting
+      alias: pipeline_dash_projects
+      tags:
+        - daily

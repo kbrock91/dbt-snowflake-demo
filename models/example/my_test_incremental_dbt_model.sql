@@ -10,8 +10,24 @@ with data as
 
 ( 
 
-    select * 
-    from {{ ref('my_first_dbt_model') }}
+with source_data as 
+
+(
+    select
+        1 as id,        
+        to_number(10.0) as my_test_column
+
+    union 
+
+    select
+        2 as id,
+        to_number(5.0) as my_test_column
+
+)
+
+
+select * from source_data
+
 
     {% if is_incremental() %}
 
