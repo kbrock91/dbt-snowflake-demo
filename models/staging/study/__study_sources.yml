@@ -1,0 +1,42 @@
+version: 2
+
+sources:
+  - name: study_data
+    schema: dbt_kbrock
+    tables:
+      - name: raw_study
+
+        columns:
+          - name: study_id
+            data_type: NUMBER(38,0)
+
+          - name: study_title
+            data_type: CHARACTER VARYING(16777216)
+
+          - name: study_version
+            data_type: CHARACTER VARYING(16777216)
+
+          - name: study_tag
+            data_type: CHARACTER VARYING(16777216)
+
+          - name: study_type_id
+            data_type: NUMBER(38,0)
+
+          - name: study_phase_id
+            data_type: NUMBER(38,0)
+
+          - name: study_status
+            data_type: CHARACTER VARYING(16777216)
+
+          - name: study_protocol_id
+            data_type: NUMBER(38,0)
+
+          - name: study_protocol_version
+            data_type: CHARACTER VARYING(16777216)
+
+      - name: raw_study_type
+        columns:
+          - name: study_type_id
+            data_type: NUMBER(38,0)
+          - name: study_type_desc
+            data_type: CHARACTER VARYING(16777216)

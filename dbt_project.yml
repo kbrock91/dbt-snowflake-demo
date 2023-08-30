@@ -37,7 +37,8 @@ on-run-end:
 #  +quote_columns: false
 
 #configuring vars
-
+vars: 
+  faker_enabled: true
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
