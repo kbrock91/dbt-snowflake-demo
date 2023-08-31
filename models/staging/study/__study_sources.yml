@@ -9,6 +9,9 @@ sources:
         columns:
           - name: study_id
             data_type: NUMBER(38,0)
+            tests:
+              - unique
+              - not_null
 
           - name: study_title
             data_type: CHARACTER VARYING(16777216)
@@ -38,5 +41,8 @@ sources:
         columns:
           - name: study_type_id
             data_type: NUMBER(38,0)
+            tests:
+              - unique
+              - not_null            
           - name: study_type_desc
             data_type: CHARACTER VARYING(16777216)
