@@ -4,6 +4,7 @@
     )
 }}
 
+
 with study as (
 
     select * from {{ ref('stg_study') }}
