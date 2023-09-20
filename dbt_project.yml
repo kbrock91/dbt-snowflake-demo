@@ -37,7 +37,18 @@ on-run-end:
 #  +quote_columns: false
 
 #configuring vars
-
+vars:
+  surrogate_key_treat_nulls_as_empty_strings: True
+  salesforce_database: STEVE_D_RAW_DATA
+  salesforce__user_enabled: false # Disable if you do not have the user_role table
+  salesforce_schema: SAMPLE_SALESFORCE_DATA
+  salesforce__user_role_enabled: false # Disable if you do not have the user_role table
+  salesforce__lead_enabled: true # Disable if you do not have the lead table
+  salesforce__event_enabled: false # Disable if you do not have the event table
+  salesforce__task_enabled: false # Disable if you do not have the task table
+  salesforce__opportunity_line_item_enabled: false # Disable if you do not have the opportunity_line_item table
+  salesforce__order_enabled: false # Disable if you do not have the order table
+  salesforce__product_2_enabled: false # Disable if you do not have the product_2 table
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
