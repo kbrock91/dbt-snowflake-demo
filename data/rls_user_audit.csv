@@ -1,0 +1,2 @@
+contact_id,contact_email, c_role,ls_action,ls_msg,role_creation_timestamp
+2,katherine.brock+rlstest2@dbtlabs.com,KATHERINE$BROCKRLSTEST2$DBTLABS$COM,CREATE,Creating role : KATHERINE$BROCKRLSTEST2$DBTLABS$COM FOR user email : katherine.brock+rlstest2@dbtlabs.com,2023-09-26T13:27:56.460000-07:00

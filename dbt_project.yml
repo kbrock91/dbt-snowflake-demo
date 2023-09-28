@@ -48,6 +48,12 @@ on-run-end:
 models:
   my_snowflake_dbt_project:
     # When you rename the project up top, remember to rename it here too. 
+      example:
+        rls:
+          +materialized: table
+#          +post-hook:
+#            - "{{ create_roles() }}"
+
       staging:
           # Applies to all files under models/staging 
           +materialized: view
