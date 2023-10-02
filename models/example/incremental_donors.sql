@@ -1,7 +1,7 @@
 {{
     config(
         materialized='incremental',
-        unique_key='id'
+        unique_key='donor_id'
     )
 }}
 
@@ -10,7 +10,7 @@ with data as
 ( 
 
     select * , current_timestamp() as dbt_update_dt
-    from {{ ref('my_first_dbt_model') }}
+    from {{ ref('donors') }}
 
     {% if is_incremental() %}
 
