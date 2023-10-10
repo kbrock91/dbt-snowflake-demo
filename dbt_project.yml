@@ -37,7 +37,9 @@ on-run-end:
 #  +quote_columns: false
 
 #configuring vars
-
+vars:
+  # The `quarter` variable will be accessible in all resources
+  quarter: 'q1_2023'
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 

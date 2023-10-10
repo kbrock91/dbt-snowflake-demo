@@ -9,7 +9,8 @@ Full documentation: https://docs.getdbt.com/reference/resource-configs/snowflake
 {{
     config(
         materialized = 'table',
-        transient=false
+        transient=false, 
+        alias = this.name ~ '_' ~ var('quarter')
     )
 }}
 
