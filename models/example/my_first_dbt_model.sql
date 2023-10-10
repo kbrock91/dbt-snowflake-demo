@@ -10,6 +10,13 @@ with source_data as
     select
         2 as id,
         2 / 2 as value
+            
+        union 
+
+    select
+        2 as id,
+        4 / 2 as value
+
 
 )
 
