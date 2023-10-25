@@ -1,0 +1,16 @@
+selectors:
+  - name: skip_views_unless_dynamic
+    description: >
+      A default selector that will exclude materializing views
+      without skipping dynamic views.
+    default: false
+    definition:
+      union:
+        - union: 
+          - method: path
+            value: "*"
+          - exclude: 
+            - method: config.materialized
+              value: view
+        - method: tag
+          value: dynamic

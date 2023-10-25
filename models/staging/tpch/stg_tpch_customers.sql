@@ -1,8 +1,8 @@
 /*  This is a model config block. With it, you can create model specific configurations and override the configurations set on the dbt_project.yml. 
 */
 {{ config(
-    materialized="table",
-    tags="hourly"
+    materialized="view",
+    tags="dynamic"
 ) }}
 
 /* This is a dbt model  which means it fits 2 requirements:

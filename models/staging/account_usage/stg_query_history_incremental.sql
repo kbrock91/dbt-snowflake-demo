@@ -1,7 +1,8 @@
 {{
     config(
         materialized='incremental',
-        unique_key = 'QUERY_ID'
+        unique_key = 'QUERY_ID', 
+        enabled = false
     )
 }}
 
