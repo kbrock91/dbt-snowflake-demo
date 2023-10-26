@@ -1,0 +1,29 @@
+name: Trigger dbt Cloud Job on Merge
+on:
+  push:
+    branches:
+      - qa
+
+jobs:
+  autoscaling:
+    runs-on: ubuntu-latest
+    env:
+      DBT_CLOUD_SERVICE_TOKEN: ${{ secrets.DBT_CLOUD_SERVICE_TOKEN }}
+      DBT_CLOUD_ACCOUNT_ID: 64729
+      JOB_ID: 173389
+      PULL_REQUEST_ID: ${{ github.event.number }}
+      GIT_SHA: ${{ github.event.pull_request.head.sha }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.9.x"
+
+      - name: Trigger Job on Merge
+        run: |
+          pip install dbtc==0.3.3
+          run=$(dbtc trigger-job \
+            --job-id=$JOB_ID \
+            --payload='{"cause": "On Merge!","git_sha":"'"$GIT_SHA"'","github_pull_request_id":'"$PULL_REQUEST_ID"'}' \
+            )
