@@ -1,8 +1,8 @@
-name: Autoscaling dbt Cloud CI
+name: Trigger dbt Cloud CI
 on:
   pull_request:
     branches:
-      - main
+      - qa
 
 jobs:
   autoscaling:
@@ -10,7 +10,7 @@ jobs:
     env:
       DBT_CLOUD_SERVICE_TOKEN: ${{ secrets.DBT_CLOUD_SERVICE_TOKEN }}
       DBT_CLOUD_ACCOUNT_ID: 64729
-      JOB_ID: 89004
+      JOB_ID: 443410
       PULL_REQUEST_ID: ${{ github.event.number }}
       GIT_SHA: ${{ github.event.pull_request.head.sha }}
 
@@ -20,11 +20,11 @@ jobs:
         with:
           python-version: "3.9.x"
 
-      - name: Trigger Autoscaling CI Job
+      - name: Trigger CI Job
         run: |
           pip install dbtc==0.3.3
           SO="dbt_cloud_pr_"$JOB_ID"_"$PULL_REQUEST_ID
-          run=$(dbtc trigger-autoscaling-ci-job \
+          run=$(dbtc trigger-job \
             --job-id=$JOB_ID \
-            --payload='{"cause": "Autoscaling Slim CI!","git_sha":"'"$GIT_SHA"'","schema_override":"'"$SO"'","github_pull_request_id":'"$PULL_REQUEST_ID"'}' \
+            --payload='{"cause": "Smart CI!","git_sha":"'"$GIT_SHA"'","schema_override":"'"$SO"'","github_pull_request_id":'"$PULL_REQUEST_ID"'}' \
             --no-should-poll)
