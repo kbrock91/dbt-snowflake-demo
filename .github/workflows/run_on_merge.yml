@@ -1,4 +1,4 @@
-name: Trigger dbt Cloud CI
+name: Trigger dbt Cloud Job on Merge
 on:
   push:
     branches:
