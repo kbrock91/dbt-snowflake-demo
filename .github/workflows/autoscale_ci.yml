@@ -22,9 +22,9 @@ jobs:
 
       - name: Trigger Autoscaling CI Job
         run: |
-          pip install dbtc==0.3.3
+          pip install dbtc==0.6.0
           SO="dbt_cloud_pr_"$JOB_ID"_"$PULL_REQUEST_ID
-          run=$(dbtc trigger-autoscaling-ci-job \
+          run=$(dbtc trigger_job \
             --job-id=$JOB_ID \
-            --payload='{"cause": "Autoscaling Slim CI!","git_sha":"'"$GIT_SHA"'","schema_override":"'"$SO"'","github_pull_request_id":'"$PULL_REQUEST_ID"'}' \
+            --payload='{"cause": "Smart CI!","git_sha":"'"$GIT_SHA"'","schema_override":"'"$SO"'","github_pull_request_id":'"$PULL_REQUEST_ID"'}' \
             --no-should-poll)
