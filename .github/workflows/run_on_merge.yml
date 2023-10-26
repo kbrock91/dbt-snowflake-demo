@@ -12,7 +12,7 @@ jobs:
       DBT_CLOUD_ACCOUNT_ID: 64729
       JOB_ID: 173389
       PULL_REQUEST_ID: ${{ github.event.number }}
-      GIT_SHA: ${{ github.event_name }}
+      GIT_SHA: ${{ github }}
 
     steps:
       - uses: actions/checkout@v2
