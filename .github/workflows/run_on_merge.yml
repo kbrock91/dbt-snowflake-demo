@@ -25,5 +25,5 @@ jobs:
           pip install dbtc==0.3.3
           run=$(dbtc trigger-job \
             --job-id=$JOB_ID \
-            --payload='{"cause": "'"$GIT_SHA"'","git_branch":"'"$GIT_SHA"'"}' \
+            --payload='{"cause": "'"$GIT_SHA"'","git_sha":"'"$GIT_SHA"'"}' \
             )
