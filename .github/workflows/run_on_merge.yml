@@ -1,6 +1,6 @@
-name: Trigger dbt Cloud CI
+name: Trigger dbt Cloud Job on Merge
 on:
-  pull_request:
+  push:
     branches:
       - qa
 
@@ -10,9 +10,9 @@ jobs:
     env:
       DBT_CLOUD_SERVICE_TOKEN: ${{ secrets.DBT_CLOUD_SERVICE_TOKEN }}
       DBT_CLOUD_ACCOUNT_ID: 64729
-      JOB_ID: 443410
+      JOB_ID: 173389
       PULL_REQUEST_ID: ${{ github.event.number }}
-      GIT_SHA: ${{ github.event.pull_request.head.sha }}
+      GIT_SHA: ${{ github.ref_name }}
 
     steps:
       - uses: actions/checkout@v2
@@ -20,11 +20,10 @@ jobs:
         with:
           python-version: "3.9.x"
 
-      - name: Trigger CI Job
+      - name: Trigger Job on Merge
         run: |
           pip install dbtc==0.3.3
-          SO="dbt_cloud_pr_"$JOB_ID"_"$PULL_REQUEST_ID
           run=$(dbtc trigger-job \
             --job-id=$JOB_ID \
-            --payload='{"cause": "Smart CI!","git_sha":"'"$GIT_SHA"'","schema_override":"'"$SO"'","github_pull_request_id":'"$PULL_REQUEST_ID"'}' \
-            --no-should-poll)
+            --payload='{"cause": "Triggered on Merge"}' \
+            )
