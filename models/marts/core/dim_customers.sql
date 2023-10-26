@@ -12,6 +12,7 @@ Full documentation: https://docs.getdbt.com/reference/resource-configs/snowflake
         transient=false
     )
 }}
+    
 
 with customer as (
 
