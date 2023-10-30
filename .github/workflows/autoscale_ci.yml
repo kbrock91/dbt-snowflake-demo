@@ -30,7 +30,7 @@ jobs:
             --should-poll
             )
           run_status=$($run | jq '.data.status')
-          if [ "$run_status" != "1" ]; then
+          if [ "$run_status" != "10" ]; then
             echo $run
             exit 1  # Exit with a non-zero status code to fail the step
           fi
