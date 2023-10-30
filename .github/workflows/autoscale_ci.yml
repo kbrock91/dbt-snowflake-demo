@@ -27,4 +27,10 @@ jobs:
           run=$(dbtc trigger-job \
             --job-id=$JOB_ID \
             --payload='{"cause": "Smart CI!","git_sha":"'"$GIT_SHA"'","schema_override":"'"$SO"'","github_pull_request_id":'"$PULL_REQUEST_ID"'}' \
-            --no-should-poll)
+            --should-poll
+            )
+          run_status=$($run | jq '.data.status')
+          if [ "$run_status" != "10" ]; then
+            echo $run
+            exit 1  # Exit with a non-zero status code to fail the step
+          fi
