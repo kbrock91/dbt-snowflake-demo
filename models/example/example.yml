@@ -1,5 +1,13 @@
 version: 2
 
+sources:
+  - name: source1
+    description: Welcome to the dbt Labs Snowflake demo project. We use the [TPCH dataset](https://docs.snowflake.com/en/user-guide/sample-data-tpch.html) to create a sample project to emulate what a production project might look like!
+    database: raw
+    schema: tpch_sf001
+    tables:
+      - name: source_model1
+
 models:
   - name: my_first_dbt_model
     description: "My first dbt model"

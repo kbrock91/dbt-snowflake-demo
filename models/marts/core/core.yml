@@ -138,6 +138,12 @@ models:
   
   - name: fct_orders
     description: orders fact table
+    tests:
+      - relationships:
+          column_name: concat(customer_key, clerk_name)
+          to: ref('dim_customers')
+          field: "customer_key || '-' || region"
+          severity: error
     columns:
       - name: order_key
         description: primary key of the model
@@ -146,11 +152,7 @@ models:
           - not_null
       - name: customer_key
         description: foreign key for customers
-        tests:
-          - relationships:
-              to: ref('dim_customers')
-              field: customer_key
-              severity: error
+
       - name: order_date
         description: date of the order
       - name: status_code
