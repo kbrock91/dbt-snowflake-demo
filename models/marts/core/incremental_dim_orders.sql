@@ -16,12 +16,12 @@ Full documentation: https://docs.getdbt.com/docs/building-a-dbt-project/building
 
 with orders as (
     
-    select * from {{ ref('stg_tpch_orders') }} 
+    select * from {{ ref('data_engineering_project','stg_tpch_orders') }} 
 
 ),
 order_item as (
     
-    select * from {{ ref('order_items') }}
+    select * from {{ ref('data_engineering_project','order_items') }}
 
 ),
 order_item_summary as (
