@@ -137,6 +137,7 @@ models:
             
   - name: stg_tpch_parts
     description: staging layer for parts data
+    access: public
     columns:
       - name: part_key
         description: primary key of the model
@@ -176,6 +177,7 @@ models:
 
   - name: stg_tpch_suppliers
     description: staging layer for suppliers data
+    access: public
     columns:
       - name: supplier_key
         description: primary key of the model
