@@ -7,12 +7,12 @@
 
 with order_item as (
     
-    select * from {{ ref('data_engineering_project','order_items') }}
+    select * from {{ ref('order_items') }}
 
 ),
 part_supplier as (
     
-    select * from {{ ref('data_engineering_project','part_suppliers') }}
+    select * from {{ ref('part_suppliers') }}
 
 ),
 final as (
