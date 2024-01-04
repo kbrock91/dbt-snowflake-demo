@@ -29,6 +29,7 @@ region as (
 ),
 final as (
     select
+        'new' as dummy_column, 
         customer.customer_key,
         customer.name,
         customer.address,
