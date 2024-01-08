@@ -10,25 +10,28 @@ Full documentation: https://docs.getdbt.com/reference/resource-configs/snowflake
 
 {{
     config(
+        materialized='table',
         transient=false
-        )
+
+    )
 }}
-
-
 
 
 with customer as (
 
     select * from {{ ref('stg_tpch_customers') }}
+    {{ ci_limit() }}
 
 ),
 nation as (
 
     select * from {{ ref('stg_tpch_nations') }}
+    {{ ci_limit() }}
 ),
 region as (
 
     select * from {{ ref('stg_tpch_regions') }}
+    {{ ci_limit() }}
 
 ),
 final as (
