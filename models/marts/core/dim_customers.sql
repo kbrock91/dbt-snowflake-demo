@@ -10,11 +10,11 @@ Full documentation: https://docs.getdbt.com/reference/resource-configs/snowflake
 
 {{
     config(
+        materialized='table',
         transient=false
-        )
+
+    )
 }}
-
-
 
 
 with customer as (
