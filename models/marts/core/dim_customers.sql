@@ -10,6 +10,7 @@ Full documentation: https://docs.getdbt.com/reference/resource-configs/snowflake
 
 {{
     config(
+        materialized= env_var('DBT_MATERIALIZATION'),
         transient=false
         )
 }}

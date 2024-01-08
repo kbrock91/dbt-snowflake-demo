@@ -68,8 +68,6 @@ models:
         core:
          # Applies to all files under models/marts/core
           +materialized: table
-          post-hook:
-            - "{{ 'select 1' if target.name == 'prod' else 'select 2' }}"
           # This defaults every model in the marts/core directory to be materialized as a table in Snowflake
           query_tag: dbt_marts   
           # This applies a query tag named `dbt_marts` to any related queries in Snowflake's Query_History       
