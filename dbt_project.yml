@@ -45,7 +45,10 @@ on-run-end:
 # to use, and what query tag to provide on the snowflake site. 
 # These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro. 
+
 models:
+  elementary:
+    +schema: "elementary"
   my_snowflake_dbt_project:
     # When you rename the project up top, remember to rename it here too. 
       staging:
@@ -71,3 +74,4 @@ models:
           # This defaults every model in the marts/core directory to be materialized as a table in Snowflake
           query_tag: dbt_marts   
           # This applies a query tag named `dbt_marts` to any related queries in Snowflake's Query_History       
+
