@@ -7,6 +7,32 @@
 version: 2
 
 models:
+  - name: dim_products
+    description: Product dimensions table
+    columns:
+      - name: product_key
+        data_type: number
+        description: unique identify of product table
+        tests:
+          - unique
+          - not_null
+        
+      - name: brand
+        data_type: varchar
+        description: ""
+
+      - name: category_name
+        data_type: varchar
+        description: ""
+
+      - name: product_name
+        data_type: varchar
+        description: ""
+
+      - name: _fivetran_synced
+        data_type: timestamp_tz
+        description: ""
+
   - name: dim_customers
     description: Customer dimensions table
     columns:
