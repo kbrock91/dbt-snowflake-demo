@@ -20,23 +20,22 @@ Full documentation: https://docs.getdbt.com/reference/resource-configs/snowflake
 with customer as (
 
     select * from {{ ref('stg_tpch_customers') }}
-    {{ ci_limit() }}
 
 ),
 nation as (
 
     select * from {{ ref('stg_tpch_nations') }}
-    {{ ci_limit() }}
+
 ),
 region as (
 
     select * from {{ ref('stg_tpch_regions') }}
-    {{ ci_limit() }}
 
 ),
+
 final as (
     select
-        1  as customer_key, -- customer.customer_key,
+        customer.customer_key,
         customer.name,
         customer.address,
         {# nation.nation_key as nation_key, #}
