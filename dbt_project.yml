@@ -47,10 +47,8 @@ on-run-end:
 # using the `{{ config(...) }}` macro. 
 tests:
   +store_failures: true  # all tests
-  
+
 models:
-  elementary:
-    +schema: "elementary"
   my_snowflake_dbt_project:
     # When you rename the project up top, remember to rename it here too. 
       staging:
