@@ -46,6 +46,9 @@ on-run-end:
 # These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro. 
 
+tests:
+  +store_failures: true  # all tests
+
 models:
   elementary:
     +schema: "elementary"

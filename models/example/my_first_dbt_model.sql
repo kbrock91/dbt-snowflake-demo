@@ -14,8 +14,8 @@ with source_data as
             union 
 
     select
-        7 as id,
-        2 / 2 as value
+        3 as id,
+        4 / 2 as value
 )
 
 
