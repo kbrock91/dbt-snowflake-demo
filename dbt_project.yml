@@ -29,7 +29,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 # Full documentation: https://docs.getdbt.com/reference/project-configs/on-run-start-on-run-end
 on-run-end:
   - "{{ grant_all_on_schemas(schemas, 'public') }}"
-
+on-run-start:
+    - '{{create_external_api_udf()}}'
 # Configuring seeds 
 # Full documentation: https://docs.getdbt.com/docs/building-a-dbt-project/seeds
 #seeds:
