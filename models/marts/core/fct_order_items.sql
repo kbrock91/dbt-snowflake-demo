@@ -38,6 +38,7 @@ final as (
         order_item.tax_rate,
         
         1 as order_item_count,
+        --case when order_item_key = '7ae2f08b64dd6d82a74611eb114ed07b' then 10000 else order_item.quantity end as quantity,
         order_item.quantity,
         order_item.gross_item_sales_amount,
         order_item.discounted_item_sales_amount,

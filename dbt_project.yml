@@ -51,8 +51,11 @@ tests:
 models:
   my_snowflake_dbt_project:
     # When you rename the project up top, remember to rename it here too. 
+      example:
+          +post-hook: "{{check_parent_tags(this)}}" 
       staging:
           # Applies to all files under models/staging 
+          +post-hook: "{{validate_model_name(this, ruleset='stage')}}"
           +materialized: view
           # This defaults every model in the staging directory to be materialized as a view in Snowflake. To learn more about materializations: https://docs.getdbt.com/docs/building-a-dbt-project/building-models/materializations
           schema: staging

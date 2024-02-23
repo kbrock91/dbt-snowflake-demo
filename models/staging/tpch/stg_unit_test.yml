@@ -1,0 +1,19 @@
+unit_tests:
+  - name: test_is_base_price_valid # this is the unique name of the test
+    model: order_items # name of the model I'm unit testing
+    given: # the mock data for your inputs
+      - input: ref('stg_tpch_line_items')
+        rows:
+         - {order_item_key: 1,   quantity: 0}
+         - {order_item_key: 2,   quantity: 2}
+         - {order_item_key: 3,   quantity: 3}
+      - input: ref('stg_tpch_orders')
+        rows:
+         - {order_key: 1}
+         - {order_key: 2}
+         - {order_key: 3}
+    expect: # the expected output given the inputs above
+      rows:
+        - {order_item_key: 1, base_price: null}
+        - {order_item_key: 2, base_price: 1000.0}
+        - {order_item_key: 3, base_price: 200.0}
