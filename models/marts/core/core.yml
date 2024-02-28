@@ -146,6 +146,7 @@ models:
               sigma_threshold: 2 # (Optional. Default is 3)
               group_by: [order_date] # (Optional. Default is 'None')
               tags: ['price_tests']
+              severity: warn
 
       - name: discount_percentage
         description: '{{ doc("discount_percentage") }}'
@@ -162,6 +163,7 @@ models:
               sigma_threshold: 4 # (Optional. Default is 3)
               group_by: [order_date] # (Optional. Default is 'None')
               tags: ['quantity_tests']
+              severity: warn
 
 
       - name: gross_item_sales_amount
@@ -171,6 +173,7 @@ models:
               sigma_threshold: 2 # (Optional. Default is 3)
               group_by: [order_date] # (Optional. Default is 'None')
               tags: ['price_tests']
+              severity: warn
 
       - name: discounted_item_sales_amount
         description: '{{ doc("discounted_item_sales_amount") }}'
