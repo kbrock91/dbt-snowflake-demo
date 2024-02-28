@@ -141,6 +141,12 @@ models:
         description: '{{ doc("cost") }}'
       - name: base_price
         description: '{{ doc("base_price") }}'
+        tests:
+          - dbt_expectations.expect_column_values_to_be_within_n_stdevs:
+              sigma_threshold: 2 # (Optional. Default is 3)
+              group_by: [order_date] # (Optional. Default is 'None')
+              tags: ['price_tests']
+
       - name: discount_percentage
         description: '{{ doc("discount_percentage") }}'
       - name: discounted_price
@@ -155,9 +161,17 @@ models:
           - dbt_expectations.expect_column_values_to_be_within_n_stdevs:
               sigma_threshold: 4 # (Optional. Default is 3)
               group_by: [order_date] # (Optional. Default is 'None')
+              tags: ['quantity_tests']
+
 
       - name: gross_item_sales_amount
         description: '{{ doc("gross_item_sales_amount") }}'
+        tests:
+          - dbt_expectations.expect_column_values_to_be_within_n_stdevs:
+              sigma_threshold: 2 # (Optional. Default is 3)
+              group_by: [order_date] # (Optional. Default is 'None')
+              tags: ['price_tests']
+
       - name: discounted_item_sales_amount
         description: '{{ doc("discounted_item_sales_amount") }}'
       - name: item_discount_amount
