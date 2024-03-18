@@ -1,2 +1,3 @@
 projects:
-  - name: data_engineering_project
+  - name: region_1
+  - name: region_2
