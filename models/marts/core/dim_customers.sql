@@ -15,16 +15,16 @@ Full documentation: https://docs.getdbt.com/reference/resource-configs/snowflake
 
 with customer as (
 
-    select * from {{ ref('data_engineering_project', 'stg_tpch_customers') }}
+    select * from {{ ref('region_1', 'stg_tpch_customers') }}
 
 ),
 nation as (
 
-    select * from {{ ref('data_engineering_project', 'stg_tpch_nations') }}
+    select * from {{ ref('region_1', 'stg_tpch_nations') }}
 ),
 region as (
 
-    select * from {{ ref('data_engineering_project', 'stg_tpch_regions') }}
+    select * from {{ ref('region_1', 'stg_tpch_regions') }}
 
 ),
 final as (
