@@ -19,7 +19,7 @@ final as (
         container,
         retail_price,
         type,
-    'new' as new_col
+    'new_1' as new_col
     from
         part
 )
