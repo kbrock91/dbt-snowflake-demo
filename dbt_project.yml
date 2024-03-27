@@ -45,7 +45,7 @@ on-run-end:
 # These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro. 
 models:
-  parent_snowflake_project:
+  region_1: &model_config
     # When you rename the project up top, remember to rename it here too. 
       staging:
           # Applies to all files under models/staging 
@@ -70,3 +70,4 @@ models:
           # This defaults every model in the marts/core directory to be materialized as a table in Snowflake
           query_tag: dbt_marts   
           # This applies a query tag named `dbt_marts` to any related queries in Snowflake's Query_History       
+  region_2: *model_config
