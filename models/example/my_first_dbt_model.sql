@@ -8,7 +8,7 @@ with source_data as
     union 
 
     select
-        2 as id,
+        1 as id,
         2 / 2 as value
 
             union 
