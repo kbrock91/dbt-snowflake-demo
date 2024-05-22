@@ -32,7 +32,7 @@ region as (
 ),
 final as (
     select
-        1 as customer_key,
+        customer.customer_key,
         customer.name,
         customer.address,
         {# nation.nation_key as nation_key, #}
