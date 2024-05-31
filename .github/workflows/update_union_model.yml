@@ -3,7 +3,7 @@ on:
   push:
     branches-ignore:
       - 'main'
-    paths: 'models/example/input_models/*'
+    paths: 'models/example/input_models/**'
 
 jobs:
   generate:
