@@ -1,0 +1,32 @@
+name: Update Union
+on:
+  push:
+    branches:
+      - '!main'
+    paths: 
+      - "models/example/input_models"
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9.x'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+
+      - name: Generate models
+        working-directory: ./util_scripts
+        run: |
+          python update_union_model.py
+      - name: Add dynamic models
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: '*.sql'
+          committer_name: Github Actions
+          committer_email: actions@github.com
+          message: 'Added dynamic models via GH action'
