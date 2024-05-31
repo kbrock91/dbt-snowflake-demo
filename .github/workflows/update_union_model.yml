@@ -3,6 +3,7 @@ on:
   push:
     branches-ignore:
       - 'main'
+  paths: 'models/example/input_models/**/*.sql'
 
 jobs:
   generate:
