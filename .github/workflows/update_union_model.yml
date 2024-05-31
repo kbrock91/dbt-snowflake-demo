@@ -5,7 +5,7 @@ on:
       - 'feature/segway-example'
       - '!main'
     paths: 
-      - "models/example/input_models"
+      - 'models/example/input_models'
 
 jobs:
   generate:
