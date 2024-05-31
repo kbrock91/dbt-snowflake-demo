@@ -1,8 +1,8 @@
 import os
 
 # Define the path to the subdirectory and the file to be updated
-subdirectory_path = 'models/example/input_models'
-union_models_file_path = 'models/example/union_models.sql'
+subdirectory_path = './models/example/input_models'
+union_models_file_path = './models/example/union_models.sql'
 
 # List all SQL files in the subdirectory
 sql_files = [f.replace('.sql', '') for f in os.listdir(subdirectory_path) if f.endswith('.sql')]
