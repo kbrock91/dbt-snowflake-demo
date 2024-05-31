@@ -16,7 +16,7 @@ Full documentation: https://docs.getdbt.com/docs/building-a-dbt-project/building
 
 with orders as (
     
-    select * from {{ ref('stg_tpch_orders') }} 
+    select * from {{ ref('region_1','stg_tpch_orders') }} 
 
 ),
 order_item as (

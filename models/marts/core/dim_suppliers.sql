@@ -6,16 +6,16 @@
 
 with supplier as (
 
-    select * from {{ ref('stg_tpch_suppliers') }}
+    select * from {{ ref('region_1','stg_tpch_suppliers') }}
 
 ),
 nation as (
 
-    select * from {{ ref('stg_tpch_nations') }}
+    select * from {{ ref('region_1','stg_tpch_nations') }}
 ),
 region as (
 
-    select * from {{ ref('stg_tpch_regions') }}
+    select * from {{ ref('region_1','stg_tpch_regions') }}
 
 ),
 final as (

@@ -5,7 +5,7 @@
 }}
 with part as (
 
-    select * from {{ ref('stg_tpch_parts') }}
+    select * from {{ ref('region_1', 'stg_tpch_parts') }}
 
 ),
 
