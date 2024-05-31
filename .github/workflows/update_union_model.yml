@@ -2,7 +2,7 @@ name: Update Union
 on:
   push:
     branches:
-      - '*'
+      - 'feature/segway-example'
       - '!main'
     paths: 
       - "models/example/input_models"
