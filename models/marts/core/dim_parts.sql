@@ -11,11 +11,11 @@ with part as (
 
 final as (
     select
-        1 as part_key,
+        part_key,
         manufacturer,
         name,
         brand,
-        size,
+        1 as size,
         container,
         retail_price,
         type,
