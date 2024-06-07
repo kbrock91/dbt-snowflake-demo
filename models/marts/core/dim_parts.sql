@@ -11,7 +11,7 @@ with part as (
 
 final as (
     select
-        part_key,
+        1 as part_key,
         manufacturer,
         name,
         brand,
@@ -19,7 +19,8 @@ final as (
         container,
         retail_price,
         type,
-    'new_1' as new_col
+    'new_1' as new_col, 
+    'another_one' as another_one
     from
         part
 )
