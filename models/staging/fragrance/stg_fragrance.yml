@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: stg_products
+    description: table with all fragrance and flavor related products
+    columns:
+      - name: product_key
+        data_type: number
+        description: unique identified for products
+        tests:
+          - unique
+          - not_null
+          
+      - name: brand
+        data_type: varchar
+        description: brand of product
+
+      - name: category_name
+        data_type: varchar
+        description: category name - valid options include Beauty, Food, or Chemical
+        tests:
+          - accepted_values:
+              values: ['Beauty','Food','Chemical','Other']
+
+      - name: product_name
+        data_type: varchar
+        description: name of product
+
+      - name: _fivetran_synced
+        data_type: timestamp_tz
+        description: time record synced via Fivetran

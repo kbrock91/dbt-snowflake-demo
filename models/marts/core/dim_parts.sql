@@ -18,7 +18,8 @@ final as (
         size,
         container,
         retail_price,
-        type
+        type,
+    'new_1' as new_col
     from
         part
 )
