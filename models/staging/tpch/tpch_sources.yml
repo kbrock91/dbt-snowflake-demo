@@ -13,13 +13,15 @@ sources:
     description: Welcome to the dbt Labs Snowflake demo project. We use the [TPCH dataset](https://docs.snowflake.com/en/user-guide/sample-data-tpch.html) to create a sample project to emulate what a production project might look like!
     database: raw
     schema: tpch_sf001
+    freshness: 
+      # This section applies freshness tests on these column. Full docs: https://docs.getdbt.com/docs/dbt-cloud/using-dbt-cloud/cloud-snapshotting-source-freshness
+      warn_after: {count: 12, period: hour}
     tables:
       - name: orders
         description: main order tracking table
         freshness: 
           # This section applies freshness tests on these column. Full docs: https://docs.getdbt.com/docs/dbt-cloud/using-dbt-cloud/cloud-snapshotting-source-freshness
-          warn_after: {count: 6, period: hour}
-          # error_after: {count: 12, period: hour}
+          null
         loaded_at_field: o_orderdate::timestamp
         
         columns:
