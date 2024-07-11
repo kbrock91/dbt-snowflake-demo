@@ -13,7 +13,7 @@ final as (
     select
         part_key,
         manufacturer,
-        name,
+        'dummy_name' as name,
         brand,
         size,
         container,
