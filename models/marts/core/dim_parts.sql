@@ -13,12 +13,13 @@ final as (
     select
         part_key,
         manufacturer,
-        name,
+        'dummy_name' as name,
         brand,
         size,
         container,
         retail_price,
-        type
+        type,
+    'new_1' as new_col
     from
         part
 )
