@@ -1,6 +1,8 @@
 packages:
-- package: dbt-labs/dbt_utils
-  version: 1.1.1
-- package: dbt-labs/codegen
-  version: 0.12.1
-sha1_hash: d974113b0f072cce35300077208f38581075ab40
+  - package: dbt-labs/dbt_utils
+    version: 1.1.1
+  - package: dbt-labs/codegen
+    version: 0.12.1
+  - package: calum-mcg/fuzzy_text
+    version: 0.0.5
+sha1_hash: 4a4ece2c50c8897bf8d0780c025163e986033c3a

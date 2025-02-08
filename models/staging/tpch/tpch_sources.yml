@@ -11,7 +11,12 @@ version: 2
 sources:
   - name: tpch
     description: Welcome to the dbt Labs Snowflake demo project. We use the [TPCH dataset](https://docs.snowflake.com/en/user-guide/sample-data-tpch.html) to create a sample project to emulate what a production project might look like!
-    database: raw
+    database: |
+      {%- if target.name == "default" or target.name == "dev" -%} raw
+      {%- elif target.name == "qa"  -%} raw
+      {%- elif target.name == "prod"  -%} raw
+      {%- else -%} invalid_database
+      {%- endif -%}
     schema: tpch_sf001
     tables:
       - name: orders
