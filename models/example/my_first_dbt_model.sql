@@ -16,6 +16,12 @@ with source_data as
     select
         7 as id,
         2 / 2 as value
+
+                union 
+
+    select
+        9 as id,
+        2 / 2 as value
 )
 
 
