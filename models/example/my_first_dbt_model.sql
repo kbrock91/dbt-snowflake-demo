@@ -16,6 +16,14 @@ with source_data as
     select
         7 as id,
         2 / 2 as value
+
+
+--added to create merge conflicts
+            union 
+
+    select
+        8 as id,
+        24 / 2 as value
 )
 
 
