@@ -1,6 +1,6 @@
 {{
     config(
-        materialized = 'table'
+        materialized = 'view'
     )
 }}
 with part as (
@@ -15,11 +15,12 @@ final as (
         manufacturer,
         'dummy_name' as name,
         brand,
-        size,
+        1 as size,
         container,
         retail_price,
         type,
-    'new_1' as new_col
+    'new_1' as new_col, 
+    'another_one' as another_one
     from
         part
 )
