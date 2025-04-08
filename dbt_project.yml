@@ -12,17 +12,17 @@ profile: 'snowflake_demo_project'
 # These configurations specify where dbt should look for different types of files.
 # The `source-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You don't need to change these for this project.
-source-paths: ["models"]
+model-paths: ["models"]
 analysis-paths: ["analysis"]
 test-paths: ["tests"]
-data-paths: ["data"]
+seed-paths: ["data"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
 target-path: "target"  # directory which will store compiled SQL files
 clean-targets:         # directories to be removed by `dbt clean`
     - "target"
-    - "dbt_modules"
+    - "dbt_packages"
 
 # on-run-start and on-run-end are SQL statement(s) or macros that run at the end of 
 # dbt run/dbt/seed/dbt snapshot commands. 
@@ -32,9 +32,9 @@ on-run-end:
 
 # Configuring seeds 
 # Full documentation: https://docs.getdbt.com/docs/building-a-dbt-project/seeds
-seeds:
+#seeds:
 # This declares that column names in the seed file will not be quoted when the table is created.
-  +quote_columns: false
+#  +quote_columns: false
 
 #configuring vars
 
@@ -45,6 +45,9 @@ seeds:
 # to use, and what query tag to provide on the snowflake site. 
 # These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro. 
+tests:
+  +store_failures: true  # all tests
+
 models:
   my_snowflake_dbt_project:
     # When you rename the project up top, remember to rename it here too. 
@@ -70,4 +73,6 @@ models:
           +materialized: table
           # This defaults every model in the marts/core directory to be materialized as a table in Snowflake
           query_tag: dbt_marts   
-          # This applies a query tag named `dbt_marts` to any related queries in Snowflake's Query_History       
+          # This applies a query tag named `dbt_marts` to any related queries in Snowflake's Query_History  
+          tags: ['sync_to_bq']     
+

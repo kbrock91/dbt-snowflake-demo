@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: google_sheets
+    database: fivetran_database
+    tables:
+      - name: fragrance_products
+        columns:
+          - name: _row
+            data_type: number
+          - name: brand
+            data_type: varchar
+          - name: category
+            data_type: varchar
+          - name: product_name
+            data_type: varchar
+          - name: product_key
+            data_type: number
+          - name: _fivetran_synced
+            data_type: timestamp_tz
