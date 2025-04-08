@@ -73,5 +73,6 @@ models:
           +materialized: table
           # This defaults every model in the marts/core directory to be materialized as a table in Snowflake
           query_tag: dbt_marts   
-          # This applies a query tag named `dbt_marts` to any related queries in Snowflake's Query_History       
+          # This applies a query tag named `dbt_marts` to any related queries in Snowflake's Query_History  
+          tags: ['sync_to_bq']     
 
