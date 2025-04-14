@@ -1,3 +1,5 @@
+
+
 /* Create a pivot table with dynamic columns based on the ship modes that are in the system */
 
 {%- call statement('result', fetch_result=True) -%}
