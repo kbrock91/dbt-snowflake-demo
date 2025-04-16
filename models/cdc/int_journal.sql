@@ -1,17 +1,7 @@
 {{ config(
     materialized='incremental',
     unique_key='journal_line_surrogate_key',
-    incremental_strategy='merge',
-    merge_update_columns=[
-        'account',
-        'amount',
-        'currency',
-        'effective_date',
-        'is_deleted',
-        'last_change_seq',
-        'last_operation',
-        'last_updated_at'
-    ]
+    incremental_strategy='merge'
 ) }}
 
 with deduped_ct as (
@@ -32,6 +22,14 @@ with deduped_ct as (
     where row_num = 1
 ),
 
+filtered_src as (
+    select *
+    from {{ ref('source_journal_data') }} src
+    where (src.journal_id, src.line_id) in (
+        select journal_id, line_id from deduped_ct
+    )
+)
+,
 staged as (
     select
         {{ dbt_utils.generate_surrogate_key(['ct.journal_id', 'ct.line_id']) }} as journal_line_surrogate_key,
@@ -46,9 +44,9 @@ staged as (
         ct.header__operation as last_operation,
         ct.header__timestamp as last_updated_at
     from deduped_ct ct
-    left join {{ ref('source_journal_data') }} src
+        left join filtered_src src
         on ct.journal_id = src.journal_id
-       and ct.line_id = src.line_id
+        and ct.line_id = src.line_id
 )
 
 select * from staged
