@@ -3,8 +3,9 @@ version: 2
 models:
   - name: order_items
     description: Intermediate model where we calculate item price, discounts and tax. This model is at the order item level.
-    tags:
-      - output_table_type|orders
+    config:
+      tags:
+        - output_table_type|orders
     columns:
       - name: order_item_key
         description: '{{ doc("order_item_key") }}'
