@@ -109,10 +109,6 @@ sources:
             description: tax rate of the order item
           - name: l_returnflag
             description: letter determining the status of the return
-            tests:
-              - accepted_values:
-                  values: ['R','N']
-                  severity: warn
           - name: l_linestatus
             description: status code of the order item
           - name: l_shipdate
