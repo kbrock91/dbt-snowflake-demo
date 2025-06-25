@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: sao_source
+    schema: dbt_kbrock_sandbox1
+    database: analytics
+    tables:
+      - name: raw_orders
+#        loaded_at_field: cast(order_date as timestamp)

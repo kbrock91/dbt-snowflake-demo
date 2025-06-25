@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: my_first_dbt_model
+    description: "My first dbt model"
+    columns:
+      - name: id
+        description: "id of my first dbt model"
+
+      - name: math
+        description: "calculated column"
+
+  - name: my_second_dbt_model
+    description: "My second dbt model"
+    columns:
+      - name: id
+        description: "id of my second dbt model"
+        tests: 
+          - unique
+          - not_null
+
+      - name: math
+        description: "calculated column"
+
+      - name: _loaded_at
+        description: "date the row was loaded into table"
+
+  - name: my_incremental_dbt_model
+    description: "My incremental dbt model"
+    columns:
+      - name: id
+        description: "id of my incremental dbt model"
+
+      - name: math
+        description: "calculated column"
