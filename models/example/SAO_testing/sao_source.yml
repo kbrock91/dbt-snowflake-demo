@@ -6,4 +6,4 @@ sources:
     database: analytics
     tables:
       - name: view_raw_orders
-#        loaded_at_field: cast(order_date as timestamp)
+        loaded_at_field: cast(order_date as timestamp)
