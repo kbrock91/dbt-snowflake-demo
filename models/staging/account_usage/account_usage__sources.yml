@@ -6,5 +6,4 @@ sources:
     database: snowflake
     tables:
       - name: query_history
-        loaded_at_field: "CAST(end_time AS TIMESTAMP)"
       - name: warehouse_metering_history
