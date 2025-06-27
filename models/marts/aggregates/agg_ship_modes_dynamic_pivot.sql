@@ -1,5 +1,9 @@
 /* Create a pivot table with dynamic columns based on the ship modes that are in the system */
-
+{{
+    config(
+        enabled=False
+    )
+}}
 {%- call statement('result', fetch_result=True) -%}
 
     {# this pulls the unique ship modes from the fct_order_items table #}
