@@ -18,11 +18,9 @@ test-paths: ["tests"]
 seed-paths: ["data"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
-
-target-path: "target"  # directory which will store compiled SQL files
 clean-targets:         # directories to be removed by `dbt clean`
-    - "target"
-    - "dbt_packages"
+  - "target"
+  - "dbt_packages"
 
 # on-run-start and on-run-end are SQL statement(s) or macros that run at the end of 
 # dbt run/dbt/seed/dbt snapshot commands. 
@@ -51,28 +49,18 @@ tests:
 models:
   my_snowflake_dbt_project:
     # When you rename the project up top, remember to rename it here too. 
-      staging:
+    staging:
           # Applies to all files under models/staging 
-          +materialized: view
+      +materialized: view
           # This defaults every model in the staging directory to be materialized as a view in Snowflake. To learn more about materializations: https://docs.getdbt.com/docs/building-a-dbt-project/building-models/materializations
-          schema: staging
-          # This configuration builds every model in the staging directory into a schema named staging_<target_schema>
-          # learn more about custom schemas: https://docs.getdbt.com/docs/building-a-dbt-project/building-models/using-custom-schemas
-          query_tag: dbt_staging
-          # This applies a query tag named `dbt_staging` to any related queries in Snowflake's Query_History
-          # learn more about query tags: https://docs.getdbt.com/reference/resource-configs/snowflake-configs#query-tags
-          snowflake_warehouse: transforming
-          # This specifies which Snowflake warehouse should be used to execute models in staging by overriding the default warehouse defined in the connection.
-          # learn more about configuring warehouses: https://docs.getdbt.com/reference/resource-configs/snowflake-configs#configuring-virtual-warehouses
-          tags: "daily"
-          # You can apply tags to models, snapshots, seeds. This allows you to run based on the tag such as `dbt run --model tag:daily` which would let you run all the models tagged "daily"
-          # learn more about tags: https://docs.getdbt.com/reference/resource-configs/tags#definition
-      marts:
-        core:
+      +schema: staging
+      +query_tag: dbt_staging
+      +snowflake_warehouse: transforming
+      +tags: "daily"
+    marts:
+      core:
          # Applies to all files under models/marts/core
-          +materialized: table
+        +materialized: table
           # This defaults every model in the marts/core directory to be materialized as a table in Snowflake
-          query_tag: dbt_marts   
-          # This applies a query tag named `dbt_marts` to any related queries in Snowflake's Query_History  
-          tags: ['sync_to_bq']     
-
+        +query_tag: dbt_marts
+        +tags: ['sync_to_bq']
