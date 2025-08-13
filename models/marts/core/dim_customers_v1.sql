@@ -11,7 +11,8 @@ Full documentation: https://docs.getdbt.com/reference/resource-configs/snowflake
 {{
     config(
         materialized='view',
-        transient=false
+        transient=false, 
+        alias = 'dim_customers'
 
     )
 }}
