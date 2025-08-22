@@ -1,0 +1,10 @@
+
+version: 2
+
+
+sources:
+  - name: json
+    database: analytics
+    schema: dbt_kbrock
+    tables:
+      - name: example_json_table
