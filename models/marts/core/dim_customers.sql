@@ -10,12 +10,11 @@ Full documentation: https://docs.getdbt.com/reference/resource-configs/snowflake
 
 {{
     config(
-        materialized='view',
+        materialized='table',
         transient=false
 
     )
 }}
-
 
 with customer as (
 
@@ -43,7 +42,7 @@ final as (
         customer.phone_number,
         customer.account_balance,
         customer.market_segment,
-        'new' as new_column
+        'but_now_its_old' as new_column
         -- new column
     from
         customer
