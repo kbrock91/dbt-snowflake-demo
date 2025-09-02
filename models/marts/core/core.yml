@@ -45,9 +45,10 @@ models:
         description: region name
         tests:
           - accepted_values:
-              values: ['AFRICA', 'MIDDLE EAST', 'ASIA', 'EUROPE', 'AMERICA']
               config:
                 severity: warn
+              arguments:
+                values: ['AFRICA', 'MIDDLE EAST', 'ASIA', 'EUROPE', 'AMERICA']
       - name: name
         description: customer id
       - name: address
@@ -173,10 +174,11 @@ models:
         description: foreign key for customers
         tests:
           - relationships:
-              to: ref('dim_customers')
-              field: customer_key
               config:
                 severity: error
+              arguments:
+                to: ref('dim_customers')
+                field: customer_key
       - name: order_date
         description: date of the order
       - name: status_code
