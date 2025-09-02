@@ -10,7 +10,7 @@ models:
         tests:
           - unique
           - not_null
-          
+
       - name: brand
         data_type: varchar
         description: brand of product
@@ -20,7 +20,8 @@ models:
         description: category name - valid options include Beauty, Food, or Chemical
         tests:
           - accepted_values:
-              values: ['Beauty','Food','Chemical','Other']
+              arguments:
+                values: ['Beauty', 'Food', 'Chemical', 'Other']
 
       - name: product_name
         data_type: varchar

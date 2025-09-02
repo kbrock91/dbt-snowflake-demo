@@ -28,8 +28,9 @@ sources:
             description: Foreign Key to C_CUSTKEY
             tests:
               - relationships:
-                  to: source('tpch', 'customer')
-                  field: c_custkey
+                  arguments:
+                    to: source('tpch', 'customer')
+                    field: c_custkey
           - name: o_orderstatus
             description: status code of the order
           - name: o_totalprice
@@ -83,20 +84,23 @@ sources:
             description: Foreign Key to O_ORDERKEY
             tests:
               - relationships:
-                  to: source('tpch', 'orders')
-                  field: o_orderkey
+                  arguments:
+                    to: source('tpch', 'orders')
+                    field: o_orderkey
           - name: l_partkey
             description: Foreign key to P_PARTKEY, first part of the compound Foreign Key to (PS_PARTKEY,PS_SUPPKEY) with L_SUPPKEY
             tests:
               - relationships:
-                  to: source('tpch', 'part')
-                  field: p_partkey
+                  arguments:
+                    to: source('tpch', 'part')
+                    field: p_partkey
           - name: l_suppkey
             description: Foreign key to S_SUPPKEY, second part of the compound Foreign Key to (PS_PARTKEY, PS_SUPPKEY) with L_PARTKEY
             tests:
               - relationships:
-                  to: source('tpch', 'supplier')
-                  field: s_suppkey
+                  arguments:
+                    to: source('tpch', 'supplier')
+                    field: s_suppkey
           - name: l_linenumber
             description: sequence of the order items within the order
           - name: l_quantity
@@ -111,9 +115,10 @@ sources:
             description: letter determining the status of the return
             tests:
               - accepted_values:
-                  values: ['R', 'N']
                   config:
                     severity: warn
+                  arguments:
+                    values: ['R', 'N']
           - name: l_linestatus
             description: status code of the order item
           - name: l_shipdate
@@ -147,8 +152,9 @@ sources:
             description: Foreign Key to R_REGIONKEY
             tests:
               - relationships:
-                  to: source('tpch', 'region')
-                  field: r_regionkey
+                  arguments:
+                    to: source('tpch', 'region')
+                    field: r_regionkey
           - name: n_comment
             description: '{{ doc("comment") }}'
 
@@ -188,14 +194,16 @@ sources:
             description: Foreign Key to P_PARTKEY
             tests:
               - relationships:
-                  to: source('tpch', 'part')
-                  field: p_partkey
+                  arguments:
+                    to: source('tpch', 'part')
+                    field: p_partkey
           - name: ps_suppkey
             description: Foreign Key to S_SUPPKEY
             tests:
               - relationships:
-                  to: source('tpch', 'supplier')
-                  field: s_suppkey
+                  arguments:
+                    to: source('tpch', 'supplier')
+                    field: s_suppkey
           - name: ps_availqty
             description: raw available quantity
           - name: ps_supplycost
@@ -240,8 +248,9 @@ sources:
             description: Foreign Key to N_NATIONKEY
             tests:
               - relationships:
-                  to: source('tpch', 'nation')
-                  field: n_nationkey
+                  arguments:
+                    to: source('tpch', 'nation')
+                    field: n_nationkey
           - name: s_phone
             description: phone number of the supplier
           - name: s_acctbal

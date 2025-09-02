@@ -64,3 +64,5 @@ models:
           # This defaults every model in the marts/core directory to be materialized as a table in Snowflake
         +query_tag: dbt_marts
         +tags: ['sync_to_bq']
+flags:
+  require_generic_test_arguments_property: true
