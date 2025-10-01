@@ -1,7 +1,6 @@
 {{
     config(
-        materialized = 'table',
-        deprecation_date='2026-01-01'
+        materialized = 'table'
     )
 }}
 with part as (
