@@ -5,4 +5,4 @@
 
   where
     not {{ column_name }} > {{- "=" if inclusive }} {{ min_value }}
-{% endtest %}
+{% endtest %} 

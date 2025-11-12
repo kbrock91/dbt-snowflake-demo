@@ -16,13 +16,13 @@ final as (
         'dummy_name' as name,
         brand,
         size,
-        container,
+        container as new_container, 
         retail_price,
         type,
-    'new_1' as new_col
+    'new_1' as NEW_COL
     from
         part
 )
 select *
 from final  
-order by part_key
+order by part_key, manufacturer 

@@ -1,0 +1,23 @@
+models:
+- name: new_model_ddl_example
+  description: This model provides a basic example of a table structure with static
+    data, including an identifier, a name, a last name, and a zip code. It serves
+    as a template for understanding how to define and document a simple model in dbt.
+  config:
+    contract:
+      enforced: false
+  columns:
+  - name: id
+    description: A unique identifier for each record in the model.
+    data_type: int
+  - name: name
+    description: The first name associated with the record.
+    data_type: varchar(20)
+  - name: last_name
+    description: The last name associated with the record.
+    data_type: varchar(1000)
+  - name: zip
+    description: A code representing the postal code for the record.
+    data_type: varchar
+  - name: address
+    data_type: varchar
