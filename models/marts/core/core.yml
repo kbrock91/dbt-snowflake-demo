@@ -7,6 +7,32 @@
 version: 2
 
 models:
+  - name: dim_products
+    description: Product dimensions table
+    columns:
+      - name: product_key
+        data_type: number
+        description: unique identify of product table
+        tests:
+          - unique
+          - not_null
+
+      - name: brand
+        data_type: varchar
+        description: ""
+
+      - name: category_name
+        data_type: varchar
+        description: ""
+
+      - name: product_name
+        data_type: varchar
+        description: ""
+
+      - name: _fivetran_synced
+        data_type: timestamp_tz
+        description: ""
+
   - name: dim_customers
     description: Customer dimensions table
     columns:
@@ -19,8 +45,10 @@ models:
         description: region name
         tests:
           - accepted_values:
-              values: ['AFRICA','MIDDLE EAST','ASIA','EUROPE','AMERICA']
-              severity: warn
+              config:
+                severity: warn
+              arguments:
+                values: ['AFRICA', 'MIDDLE EAST', 'ASIA', 'EUROPE', 'AMERICA']
       - name: name
         description: customer id
       - name: address
@@ -78,7 +106,6 @@ models:
         description: '{{ doc("phone_number") }}'
       - name: account_balance
         description: '{{ doc("account_balance") }}'
- 
   - name: fct_order_items
     description: order items fact table
     columns:
@@ -135,7 +162,6 @@ models:
         description: '{{ doc("item_tax_amount") }}'
       - name: net_item_sales_amount
         description: '{{ doc("net_item_sales_amount") }}'
-  
   - name: fct_orders
     description: orders fact table
     columns:
@@ -148,9 +174,11 @@ models:
         description: foreign key for customers
         tests:
           - relationships:
-              to: ref('dim_customers')
-              field: customer_key
-              severity: error
+              config:
+                severity: error
+              arguments:
+                to: ref('dim_customers')
+                field: customer_key
       - name: order_date
         description: date of the order
       - name: status_code
