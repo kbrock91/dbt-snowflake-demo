@@ -9,6 +9,8 @@ with part as (
 
 ),
 
+
+
 final as (
     select
         part_key,
