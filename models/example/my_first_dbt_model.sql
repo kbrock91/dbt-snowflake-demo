@@ -20,7 +20,7 @@ with source_data as
                 union 
 
     select
-        9 as id,
+        10 as id,
         2 / 2 as value
 )
 
